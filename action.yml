@@ -1,0 +1,24 @@
+name: 'Publish VS Code Extension'
+description: 'An action to publish Visual Studio Code Extension to Open VSX Registry or Visual Studio Marketplace'
+
+author: luxass
+branding:
+  color: purple
+  icon: package
+
+inputs:
+  token:
+    description: 'The token to use for authentication.'
+    required: true
+
+  registry:
+    description: 'The registry to publish to.'
+    required: true
+    default: 'vsce'
+    options:
+      - 'vsce'
+      - 'ovsx'
+
+runs:
+  using: "node16"
+  main: "dist/index.js"

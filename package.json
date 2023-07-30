@@ -1,0 +1,36 @@
+{
+  "name": "action-publish-vscode-extension",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts --source-map",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "packageManager": "pnpm@8.6.9",
+  "author": {
+    "name": "Lucas Nørgård",
+    "email": "lucasnrgaard@gmail.com",
+    "url": "https://luxass.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luxass/action-publish-vscode-extension.git"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@luxass/eslint-config": "^3.2.2",
+    "@types/node": "^20.4.5",
+    "@vercel/ncc": "^0.36.1",
+    "eslint": "^8.46.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@vscode/vsce": "^2.20.0",
+    "ovsx": "^0.8.2"
+  }
+}
