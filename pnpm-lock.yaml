@@ -8,6 +8,9 @@ dependencies:
   '@actions/core':
     specifier: ^1.10.0
     version: 1.10.0
+  '@antfu/ni':
+    specifier: ^0.21.5
+    version: 0.21.5
   '@vscode/vsce':
     specifier: ^2.20.0
     version: 2.20.0
@@ -50,6 +53,11 @@ packages:
     resolution: {integrity: sha512-BonhODnXr3amchh4qkmjPMUO8mFi/zLaaCeCAJZqch8iQqyDnVIkySjB38VHAC8IJ+bnlgfOqlhpyCUZHlQsqw==}
     dependencies:
       tunnel: 0.0.6
+    dev: false
+
+  /@antfu/ni@0.21.5:
+    resolution: {integrity: sha512-rFmuqZMFa1OTRbxdu3vmfytsy1CtsIUFH0bO85rZ1xdu2uLoioSaEi6iOULDVTQUrnes50jMs+UW355Ndj7Oxg==}
+    hasBin: true
     dev: false
 
   /@babel/code-frame@7.22.5:
