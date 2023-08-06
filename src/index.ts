@@ -1,5 +1,8 @@
 import { existsSync } from "node:fs";
 import { getBooleanInput, getInput, setFailed, setOutput } from "@actions/core";
+import {
+
+} from "ovsx";
 
 const REGISTRIES = {
   VSCE: "https://marketplace.visualstudio.com",
@@ -19,7 +22,7 @@ async function run() {
   const registry = getInput("registry");
   let extensionPath = getInput("extensionPath");
   const listFiles = getBooleanInput("debugVSIXFile");
-  const noPublish = getBooleanInput("noPublish");
+  const publish = getBooleanInput("publish");
   const preRelease = getBooleanInput("preRelease");
 
   if (!Object.keys(REGISTRIES).includes(registry.toUpperCase())) {
@@ -36,6 +39,10 @@ async function run() {
     }
     extensionPath = await getExtensionFile(extensionPath);
     setOutput("extensionFile", extensionPath);
+  }
+
+  if (publish) {
+    console.log("Publishing extension");
   }
 }
 

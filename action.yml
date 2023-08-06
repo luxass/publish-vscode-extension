@@ -28,10 +28,10 @@ inputs:
     required: false
     default: false
   
-  noPublish:
-    description: "Do not publish the extension."
+  publish:
+    description: "Publish the extension."
     required: false
-    default: false
+    default: true
   
   preRelease:
     description: "Mark the extension as pre-release extension."
