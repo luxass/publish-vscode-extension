@@ -1,7 +1,7 @@
 {
   "name": "action-publish-vscode-extension",
   "version": "0.1.0",
-  "packageManager": "pnpm@8.6.12",
+  "packageManager": "pnpm@8.7.1",
   "description": "",
   "author": {
     "name": "Lucas Nørgård",
