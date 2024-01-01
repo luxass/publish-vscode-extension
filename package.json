@@ -28,7 +28,7 @@
     "ovsx": "^0.8.2"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^3.2.2",
+    "@luxass/eslint-config": "^4.0.0",
     "@types/node": "^20.4.5",
     "@vercel/ncc": "^0.36.1",
     "eslint": "^8.46.0",
