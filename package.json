@@ -1,13 +1,13 @@
 {
   "name": "action-publish-vscode-extension",
   "version": "0.1.0",
-  "packageManager": "pnpm@8.7.1",
   "description": "",
   "author": {
     "name": "Lucas Nørgård",
     "email": "lucasnrgaard@gmail.com",
     "url": "https://luxass.dev"
   },
+  "packageManager": "pnpm@8.7.1",
   "license": "MIT",
   "repository": {
     "type": "git",

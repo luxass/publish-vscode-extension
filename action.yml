@@ -1,5 +1,5 @@
-name: "Publish VS Code Extension"
-description: "An action to publish Visual Studio Code Extension to Open VSX Registry or Visual Studio Marketplace"
+name: Publish VS Code Extension
+description: An action to publish Visual Studio Code Extension to Open VSX Registry or Visual Studio Marketplace
 
 author: luxass
 branding:
@@ -8,55 +8,55 @@ branding:
 
 inputs:
   token:
-    description: "The token to use for authentication."
+    description: The token to use for authentication.
     required: true
 
   registry:
-    description: "The registry to publish to."
+    description: The registry to publish to.
     required: true
-    default: 'vsce'
+    default: vsce
     options:
-      - 'vsce'
-      - 'ovsx'
-  
+      - vsce
+      - ovsx
+
   extensionPath:
-    description: "Path to VSIX File or path the extension you want to publish."
+    description: Path to VSIX File or path the extension you want to publish.
     required: false
-  
+
   debugVSIXFile:
-    description: "List of files in the VSIX package, for debugging purposes."
+    description: 'List of files in the VSIX package, for debugging purposes.'
     required: false
     default: false
-  
+
   publish:
-    description: "Publish the extension."
+    description: Publish the extension.
     required: false
     default: true
-  
+
   preRelease:
-    description: "Mark the extension as pre-release extension."
+    description: Mark the extension as pre-release extension.
     required: false
     default: false
 
   manager:
-    description: "The package manager to use. (We automatically detect the package manager if you don't specify it)"
+    description: 'The package manager to use. (We automatically detect the package manager if you don''t specify it)'
     required: false
     options:
-      - 'npm'
-      - 'yarn'
-      - 'pnpm'
+      - npm
+      - yarn
+      - pnpm
 
   failSilently:
-    description: "Do not fail if the extension is already published."
+    description: Do not fail if the extension is already published.
     required: false
     default: false
 
 outputs:
   vsix:
-    description: "The path to the VSIX file."
+    description: The path to the VSIX file.
   success:
-    description: "Whether the action was successful." 
+    description: Whether the action was successful.
 
 runs:
-  using: "node16"
-  main: "dist/index.js"
+  using: node16
+  main: dist/index.js
