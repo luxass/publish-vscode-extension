@@ -28,10 +28,10 @@
     "ovsx": "^0.8.2"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^3.2.2",
+    "@luxass/eslint-config": "^4.4.3",
     "@types/node": "^20.4.5",
     "@vercel/ncc": "^0.36.1",
-    "eslint": "^8.46.0",
+    "eslint": "^9.2.0",
     "typescript": "^5.1.6"
   }
 }
