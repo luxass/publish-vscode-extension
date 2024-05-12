@@ -1,8 +1,12 @@
 import { existsSync } from 'node:fs'
 import { getBooleanInput, getInput, setFailed, setOutput } from '@actions/core'
 import {
+  publish
+} from "ovsx";
 
-} from 'ovsx'
+import {
+  publish as publishVSCE,
+} from "@vscode/vsce";
 
 const REGISTRIES = {
   VSCE: 'https://marketplace.visualstudio.com',

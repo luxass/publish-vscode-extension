@@ -1,7 +1,7 @@
 {
   "name": "action-publish-vscode-extension",
   "version": "0.1.0",
-  "description": "",
+  "description": "Publish a VSCode extension to the marketplace",
   "author": {
     "name": "Lucas Nørgård",
     "email": "lucasnrgaard@gmail.com",
@@ -13,19 +13,24 @@
     "type": "git",
     "url": "https://github.com/luxass/action-publish-vscode-extension.git"
   },
-  "keywords": [],
+  "keywords": [
+    "vscode",
+    "extension",
+    "publish",
+    "marketplace",
+    "VSX"
+  ],
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build src/index.ts --source-map",
-    "typecheck": "tsc --noEmit",
+    "build": "esbuild --target=node16 --outdir=dist --bundle --platform=node --format=cjs src/index.ts",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@antfu/ni": "^0.21.5",
-    "@vscode/vsce": "^2.20.0",
-    "ovsx": "^0.8.2"
+    "@actions/core": "^1.10.1",
+    "@antfu/ni": "^0.21.10",
+    "@vscode/vsce": "^2.22.0",
+    "ovsx": "^0.8.3"
   },
   "devDependencies": {
     "@luxass/eslint-config": "^4.4.3",
