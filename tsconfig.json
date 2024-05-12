@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "incremental": true,
+    "target": "es2022",
+    "module": "ES2020",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
     "strict": true
   },
   "exclude": ["**/node_modules"]

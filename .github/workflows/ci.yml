@@ -6,11 +6,11 @@ on:
     types: [opened, synchronize]
 
 env:
-  NODE_VERSION: 16
+  NODE_VERSION: 20
 
 jobs:
   build:
-    name: Build - ${{ matrix.os }}
+    name: build - ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:

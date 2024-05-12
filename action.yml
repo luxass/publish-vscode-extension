@@ -12,11 +12,10 @@ inputs:
     required: true
 
   registry:
-    description: The registry to publish to.
+    description: The registry to publish to. (URL's are supported, but also the values 'open-vsx' and 'marketplace' are supported.)
     required: true
-    default: vsce
-    options:
-      - vsce
+    # possible values are open-vsx and marketplace.
+    default: marketplace
       - ovsx
 
   extensionPath:
@@ -26,30 +25,28 @@ inputs:
   debugVSIXFile:
     description: 'List of files in the VSIX package, for debugging purposes.'
     required: false
-    default: false
+    default: 'false'
 
   publish:
     description: Publish the extension.
     required: false
-    default: true
+    default: 'true'
 
   preRelease:
     description: Mark the extension as pre-release extension.
     required: false
-    default: false
+    default: 'false'
 
   manager:
     description: 'The package manager to use. (We automatically detect the package manager if you don''t specify it)'
     required: false
-    options:
-      - npm
-      - yarn
-      - pnpm
+    # possible values are npm, yarn, pnpm and auto.
+    default: auto
 
   failSilently:
     description: Do not fail if the extension is already published.
     required: false
-    default: false
+    default: 'false'
 
 outputs:
   vsix:
