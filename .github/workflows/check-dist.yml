@@ -23,7 +23,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: pnpm
 
       - name: Install dependencies
@@ -31,7 +31,7 @@ jobs:
 
       - name: Rebuild the dist/ directory
         run: |
-          npm run build
+          pnpm run build
 
       - name: Compare the expected and actual dist/ directories
         run: |
