@@ -12,11 +12,10 @@ inputs:
     required: true
 
   registry:
-    description: The registry to publish to. (URL's are supported, but also the values 'open-vsx' and 'marketplace' are supported.)
+    description: The registry to publish to. (URL's are supported, but also the values 'open-vsx' and 'vs-marketplace' are supported.)
     required: true
     # possible values are open-vsx and marketplace.
-    default: marketplace
-      - ovsx
+    default: vs-marketplace
 
   extensionPath:
     description: Path to VSIX File or path the extension you want to publish.
