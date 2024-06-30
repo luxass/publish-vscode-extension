@@ -36,8 +36,8 @@
     "@luxass/eslint-config": "^4.4.3",
     "@types/node": "^20.4.5",
     "@vercel/ncc": "^0.38.1",
-    "eslint": "^9.2.0",
-    "eslint-plugin-format": "^0.1.1",
+    "eslint": "^9.6.0",
+    "eslint-plugin-format": "^0.1.2",
     "typescript": "^5.4.5"
   }
 }
