@@ -1,5 +1,5 @@
-import process from 'node:process'
-import { getBooleanInput, getInput, setFailed } from '@actions/core'
+import process from "node:process";
+import { getBooleanInput, getInput, setFailed } from "@actions/core";
 
 // const REGISTRIES = {
 //   VSCE: 'https://marketplace.visualstudio.com',
@@ -13,14 +13,14 @@ import { getBooleanInput, getInput, setFailed } from '@actions/core'
 // }
 
 async function run() {
-  const _token = getInput('token', {
+  const _token = getInput("token", {
     required: true,
-  })
-  const _registry = getInput('registry')
-  const _extensionPath = getInput('extensionPath')
-  const _listFiles = getBooleanInput('debugVSIXFile')
-  const _publish = getBooleanInput('publish')
-  const _preRelease = getBooleanInput('preRelease')
+  });
+  const _registry = getInput("registry");
+  const _extensionPath = getInput("extensionPath");
+  const _listFiles = getBooleanInput("debugVSIXFile");
+  const _publish = getBooleanInput("publish");
+  const _preRelease = getBooleanInput("preRelease");
 
   // if (!Object.keys(REGISTRIES).includes(registry.toUpperCase())) {
   //   setFailed(`Invalid registry, must be one of: ${Object.keys(REGISTRIES).join(', ')}`)
@@ -44,7 +44,7 @@ async function run() {
 }
 
 run().catch((err) => {
-  console.error(err)
-  setFailed(err)
-  process.exit(1)
-})
+  console.error(err);
+  setFailed(err);
+  process.exit(1);
+});

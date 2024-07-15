@@ -22,22 +22,22 @@ inputs:
     required: false
 
   debugVSIXFile:
-    description: 'List of files in the VSIX package, for debugging purposes.'
+    description: "List of files in the VSIX package, for debugging purposes."
     required: false
-    default: 'false'
+    default: "false"
 
   publish:
     description: Publish the extension.
     required: false
-    default: 'true'
+    default: "true"
 
   preRelease:
     description: Mark the extension as pre-release extension.
     required: false
-    default: 'false'
+    default: "false"
 
   manager:
-    description: 'The package manager to use. (We automatically detect the package manager if you don''t specify it)'
+    description: "The package manager to use. (We automatically detect the package manager if you don't specify it)"
     required: false
     # possible values are npm, yarn, pnpm and auto.
     default: auto
@@ -45,7 +45,7 @@ inputs:
   failSilently:
     description: Do not fail if the extension is already published.
     required: false
-    default: 'false'
+    default: "false"
 
 outputs:
   vsix:
