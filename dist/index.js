@@ -1,9 +1,6 @@
-require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ 483:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
+(() => { // webpackBootstrap
+var __webpack_modules__ = ({
+"998": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -27,8 +24,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
-const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(994);
+const os = __importStar(__webpack_require__(37));
+const utils_1 = __webpack_require__(472);
 /**
  * Commands
  *
@@ -98,11 +95,8 @@ function escapeProperty(s) {
 }
 //# sourceMappingURL=command.js.map
 
-/***/ }),
-
-/***/ 733:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
+}),
+"441": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -135,12 +129,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
-const command_1 = __nccwpck_require__(483);
-const file_command_1 = __nccwpck_require__(541);
-const utils_1 = __nccwpck_require__(994);
-const os = __importStar(__nccwpck_require__(37));
-const path = __importStar(__nccwpck_require__(17));
-const oidc_utils_1 = __nccwpck_require__(422);
+const command_1 = __webpack_require__(998);
+const file_command_1 = __webpack_require__(431);
+const utils_1 = __webpack_require__(472);
+const os = __importStar(__webpack_require__(37));
+const path = __importStar(__webpack_require__(17));
+const oidc_utils_1 = __webpack_require__(683);
 /**
  * The code to exit an action
  */
@@ -425,27 +419,24 @@ exports.getIDToken = getIDToken;
 /**
  * Summary exports
  */
-var summary_1 = __nccwpck_require__(513);
+var summary_1 = __webpack_require__(428);
 Object.defineProperty(exports, "summary", ({ enumerable: true, get: function () { return summary_1.summary; } }));
 /**
  * @deprecated use core.summary
  */
-var summary_2 = __nccwpck_require__(513);
+var summary_2 = __webpack_require__(428);
 Object.defineProperty(exports, "markdownSummary", ({ enumerable: true, get: function () { return summary_2.markdownSummary; } }));
 /**
  * Path exports
  */
-var path_utils_1 = __nccwpck_require__(84);
+var path_utils_1 = __webpack_require__(899);
 Object.defineProperty(exports, "toPosixPath", ({ enumerable: true, get: function () { return path_utils_1.toPosixPath; } }));
 Object.defineProperty(exports, "toWin32Path", ({ enumerable: true, get: function () { return path_utils_1.toWin32Path; } }));
 Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: function () { return path_utils_1.toPlatformPath; } }));
 //# sourceMappingURL=core.js.map
 
-/***/ }),
-
-/***/ 541:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
+}),
+"431": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 // For internal use, subject to change.
@@ -472,10 +463,10 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.prepareKeyValueMessage = exports.issueFileCommand = void 0;
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__nccwpck_require__(147));
-const os = __importStar(__nccwpck_require__(37));
-const uuid_1 = __nccwpck_require__(33);
-const utils_1 = __nccwpck_require__(994);
+const fs = __importStar(__webpack_require__(147));
+const os = __importStar(__webpack_require__(37));
+const uuid_1 = __webpack_require__(273);
+const utils_1 = __webpack_require__(472);
 function issueFileCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -506,11 +497,8 @@ function prepareKeyValueMessage(key, value) {
 exports.prepareKeyValueMessage = prepareKeyValueMessage;
 //# sourceMappingURL=file-command.js.map
 
-/***/ }),
-
-/***/ 422:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
+}),
+"683": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -524,9 +512,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(794);
-const auth_1 = __nccwpck_require__(610);
-const core_1 = __nccwpck_require__(733);
+const http_client_1 = __webpack_require__(891);
+const auth_1 = __webpack_require__(881);
+const core_1 = __webpack_require__(441);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -558,7 +546,7 @@ class OidcClient {
                 .catch(error => {
                 throw new Error(`Failed to get ID Token. \n 
         Error Code : ${error.statusCode}\n 
-        Error Message: ${error.result.message}`);
+        Error Message: ${error.message}`);
             });
             const id_token = (_a = res.result) === null || _a === void 0 ? void 0 : _a.value;
             if (!id_token) {
@@ -590,11 +578,8 @@ class OidcClient {
 exports.OidcClient = OidcClient;
 //# sourceMappingURL=oidc-utils.js.map
 
-/***/ }),
-
-/***/ 84:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
+}),
+"899": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -618,7 +603,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.toPlatformPath = exports.toWin32Path = exports.toPosixPath = void 0;
-const path = __importStar(__nccwpck_require__(17));
+const path = __importStar(__webpack_require__(17));
 /**
  * toPosixPath converts the given path to the posix form. On Windows, \\ will be
  * replaced with /.
@@ -655,11 +640,8 @@ function toPlatformPath(pth) {
 exports.toPlatformPath = toPlatformPath;
 //# sourceMappingURL=path-utils.js.map
 
-/***/ }),
-
-/***/ 513:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
+}),
+"428": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -673,8 +655,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.summary = exports.markdownSummary = exports.SUMMARY_DOCS_URL = exports.SUMMARY_ENV_VAR = void 0;
-const os_1 = __nccwpck_require__(37);
-const fs_1 = __nccwpck_require__(147);
+const os_1 = __webpack_require__(37);
+const fs_1 = __webpack_require__(147);
 const { access, appendFile, writeFile } = fs_1.promises;
 exports.SUMMARY_ENV_VAR = 'GITHUB_STEP_SUMMARY';
 exports.SUMMARY_DOCS_URL = 'https://docs.github.com/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary';
@@ -945,11 +927,8 @@ exports.markdownSummary = _summary;
 exports.summary = _summary;
 //# sourceMappingURL=summary.js.map
 
-/***/ }),
-
-/***/ 994:
-/***/ ((__unused_webpack_module, exports) => {
-
+}),
+"472": (function (__unused_webpack_module, exports) {
 "use strict";
 
 // We use any as a valid input type
@@ -992,11 +971,8 @@ function toCommandProperties(annotationProperties) {
 exports.toCommandProperties = toCommandProperties;
 //# sourceMappingURL=utils.js.map
 
-/***/ }),
-
-/***/ 610:
-/***/ (function(__unused_webpack_module, exports) {
-
+}),
+"881": (function (__unused_webpack_module, exports) {
 "use strict";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -1080,11 +1056,8 @@ class PersonalAccessTokenCredentialHandler {
 exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHandler;
 //# sourceMappingURL=auth.js.map
 
-/***/ }),
-
-/***/ 794:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
+}),
+"891": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -1118,10 +1091,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
-const http = __importStar(__nccwpck_require__(685));
-const https = __importStar(__nccwpck_require__(687));
-const pm = __importStar(__nccwpck_require__(116));
-const tunnel = __importStar(__nccwpck_require__(249));
+const http = __importStar(__webpack_require__(685));
+const https = __importStar(__webpack_require__(687));
+const pm = __importStar(__webpack_require__(757));
+const tunnel = __importStar(__webpack_require__(584));
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -1692,11 +1665,8 @@ exports.HttpClient = HttpClient;
 const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCase()] = obj[k]), c), {});
 //# sourceMappingURL=index.js.map
 
-/***/ }),
-
-/***/ 116:
-/***/ ((__unused_webpack_module, exports) => {
-
+}),
+"757": (function (__unused_webpack_module, exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
@@ -1775,29 +1745,23 @@ function isLoopbackAddress(host) {
 }
 //# sourceMappingURL=proxy.js.map
 
-/***/ }),
-
-/***/ 249:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
-
-module.exports = __nccwpck_require__(709);
+}),
+"584": (function (module, __unused_webpack_exports, __webpack_require__) {
+module.exports = __webpack_require__(34);
 
 
-/***/ }),
-
-/***/ 709:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"34": (function (__unused_webpack_module, exports, __webpack_require__) {
 "use strict";
 
 
-var net = __nccwpck_require__(808);
-var tls = __nccwpck_require__(404);
-var http = __nccwpck_require__(685);
-var https = __nccwpck_require__(687);
-var events = __nccwpck_require__(361);
-var assert = __nccwpck_require__(491);
-var util = __nccwpck_require__(837);
+var net = __webpack_require__(808);
+var tls = __webpack_require__(404);
+var http = __webpack_require__(685);
+var https = __webpack_require__(687);
+var events = __webpack_require__(361);
+var assert = __webpack_require__(491);
+var util = __webpack_require__(837);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -2055,108 +2019,46 @@ if (process.env.NODE_DEBUG && /\btunnel\b/.test(process.env.NODE_DEBUG)) {
 exports.debug = debug; // for test
 
 
-/***/ }),
-
-/***/ 33:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"273": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  NIL: function() { return /* reexport safe */ _nil_js__WEBPACK_IMPORTED_MODULE_4__.Z; },
+  parse: function() { return /* reexport safe */ _parse_js__WEBPACK_IMPORTED_MODULE_8__.Z; },
+  stringify: function() { return /* reexport safe */ _stringify_js__WEBPACK_IMPORTED_MODULE_7__.Z; },
+  v1: function() { return /* reexport safe */ _v1_js__WEBPACK_IMPORTED_MODULE_0__.Z; },
+  v3: function() { return /* reexport safe */ _v3_js__WEBPACK_IMPORTED_MODULE_1__.Z; },
+  v4: function() { return /* reexport safe */ _v4_js__WEBPACK_IMPORTED_MODULE_2__.Z; },
+  v5: function() { return /* reexport safe */ _v5_js__WEBPACK_IMPORTED_MODULE_3__.Z; },
+  validate: function() { return /* reexport safe */ _validate_js__WEBPACK_IMPORTED_MODULE_6__.Z; },
+  version: function() { return /* reexport safe */ _version_js__WEBPACK_IMPORTED_MODULE_5__.Z; }
+});
+/* harmony import */var _v1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(833);
+/* harmony import */var _v3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(503);
+/* harmony import */var _v4_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52);
+/* harmony import */var _v5_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(870);
+/* harmony import */var _nil_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(781);
+/* harmony import */var _version_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(219);
+/* harmony import */var _validate_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(158);
+/* harmony import */var _stringify_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7);
+/* harmony import */var _parse_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(350);
 
 
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-Object.defineProperty(exports, "v1", ({
-  enumerable: true,
-  get: function () {
-    return _v.default;
-  }
-}));
-Object.defineProperty(exports, "v3", ({
-  enumerable: true,
-  get: function () {
-    return _v2.default;
-  }
-}));
-Object.defineProperty(exports, "v4", ({
-  enumerable: true,
-  get: function () {
-    return _v3.default;
-  }
-}));
-Object.defineProperty(exports, "v5", ({
-  enumerable: true,
-  get: function () {
-    return _v4.default;
-  }
-}));
-Object.defineProperty(exports, "NIL", ({
-  enumerable: true,
-  get: function () {
-    return _nil.default;
-  }
-}));
-Object.defineProperty(exports, "version", ({
-  enumerable: true,
-  get: function () {
-    return _version.default;
-  }
-}));
-Object.defineProperty(exports, "validate", ({
-  enumerable: true,
-  get: function () {
-    return _validate.default;
-  }
-}));
-Object.defineProperty(exports, "stringify", ({
-  enumerable: true,
-  get: function () {
-    return _stringify.default;
-  }
-}));
-Object.defineProperty(exports, "parse", ({
-  enumerable: true,
-  get: function () {
-    return _parse.default;
-  }
-}));
 
-var _v = _interopRequireDefault(__nccwpck_require__(370));
 
-var _v2 = _interopRequireDefault(__nccwpck_require__(638));
 
-var _v3 = _interopRequireDefault(__nccwpck_require__(519));
 
-var _v4 = _interopRequireDefault(__nccwpck_require__(239));
 
-var _nil = _interopRequireDefault(__nccwpck_require__(680));
 
-var _version = _interopRequireDefault(__nccwpck_require__(609));
 
-var _validate = _interopRequireDefault(__nccwpck_require__(9));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(729));
-
-var _parse = _interopRequireDefault(__nccwpck_require__(951));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-
-/***/ 276:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"452": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var crypto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(113);
+/* harmony import */var crypto__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto__WEBPACK_IMPORTED_MODULE_0__);
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _crypto = _interopRequireDefault(__nccwpck_require__(113));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function md5(bytes) {
   if (Array.isArray(bytes)) {
@@ -2165,46 +2067,24 @@ function md5(bytes) {
     bytes = Buffer.from(bytes, 'utf8');
   }
 
-  return _crypto.default.createHash('md5').update(bytes).digest();
+  return crypto__WEBPACK_IMPORTED_MODULE_0___default().createHash('md5').update(bytes).digest();
 }
 
-var _default = md5;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (md5);
 
-/***/ }),
-
-/***/ 680:
-/***/ ((__unused_webpack_module, exports) => {
-
+}),
+"781": (function (__unused_webpack_module, __webpack_exports__) {
 "use strict";
+/* harmony default export */ __webpack_exports__.Z = ('00000000-0000-0000-0000-000000000000');
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-var _default = '00000000-0000-0000-0000-000000000000';
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 951:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"350": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var _validate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _validate = _interopRequireDefault(__nccwpck_require__(9));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function parse(uuid) {
-  if (!(0, _validate.default)(uuid)) {
+  if (!(0,_validate_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.Z)(uuid)) {
     throw TypeError('Invalid UUID');
   }
 
@@ -2235,71 +2115,40 @@ function parse(uuid) {
   return arr;
 }
 
-var _default = parse;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (parse);
 
-/***/ }),
-
-/***/ 646:
-/***/ ((__unused_webpack_module, exports) => {
-
+}),
+"405": (function (__unused_webpack_module, __webpack_exports__) {
 "use strict";
+/* harmony default export */ __webpack_exports__.Z = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-var _default = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 548:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"959": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = rng;
-
-var _crypto = _interopRequireDefault(__nccwpck_require__(113));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+__webpack_require__.d(__webpack_exports__, {
+  Z: function() { return rng; }
+});
+/* harmony import */var crypto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(113);
+/* harmony import */var crypto__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto__WEBPACK_IMPORTED_MODULE_0__);
 
 const rnds8Pool = new Uint8Array(256); // # of random values to pre-allocate
 
 let poolPtr = rnds8Pool.length;
-
 function rng() {
   if (poolPtr > rnds8Pool.length - 16) {
-    _crypto.default.randomFillSync(rnds8Pool);
-
+    crypto__WEBPACK_IMPORTED_MODULE_0___default().randomFillSync(rnds8Pool);
     poolPtr = 0;
   }
 
   return rnds8Pool.slice(poolPtr, poolPtr += 16);
 }
 
-/***/ }),
-
-/***/ 557:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"285": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var crypto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(113);
+/* harmony import */var crypto__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto__WEBPACK_IMPORTED_MODULE_0__);
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _crypto = _interopRequireDefault(__nccwpck_require__(113));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function sha1(bytes) {
   if (Array.isArray(bytes)) {
@@ -2308,33 +2157,21 @@ function sha1(bytes) {
     bytes = Buffer.from(bytes, 'utf8');
   }
 
-  return _crypto.default.createHash('sha1').update(bytes).digest();
+  return crypto__WEBPACK_IMPORTED_MODULE_0___default().createHash('sha1').update(bytes).digest();
 }
 
-var _default = sha1;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (sha1);
 
-/***/ }),
-
-/***/ 729:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"7": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _validate = _interopRequireDefault(__nccwpck_require__(9));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* harmony import */var _validate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
 
 /**
  * Convert array of 16 byte values to UUID string format of the form:
  * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
  */
+
 const byteToHex = [];
 
 for (let i = 0; i < 256; ++i) {
@@ -2350,39 +2187,26 @@ function stringify(arr, offset = 0) {
   // "undefined" in the uuid)
   // - Invalid input values for the RFC `version` or `variant` fields
 
-  if (!(0, _validate.default)(uuid)) {
+  if (!(0,_validate_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.Z)(uuid)) {
     throw TypeError('Stringified UUID is invalid');
   }
 
   return uuid;
 }
 
-var _default = stringify;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (stringify);
 
-/***/ }),
-
-/***/ 370:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"833": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var _rng_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(959);
+/* harmony import */var _stringify_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _rng = _interopRequireDefault(__nccwpck_require__(548));
-
-var _stringify = _interopRequireDefault(__nccwpck_require__(729));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// **`v1()` - Generate time-based UUID**
+ // **`v1()` - Generate time-based UUID**
 //
 // Inspired by https://github.com/LiosK/UUID.js
 // and http://docs.python.org/library/uuid.html
+
 let _nodeId;
 
 let _clockseq; // Previous uuid creation time
@@ -2401,7 +2225,7 @@ function v1(options, buf, offset) {
   // system entropy.  See #189
 
   if (node == null || clockseq == null) {
-    const seedBytes = options.random || (options.rng || _rng.default)();
+    const seedBytes = options.random || (options.rng || _rng_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.Z)();
 
     if (node == null) {
       // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
@@ -2468,54 +2292,31 @@ function v1(options, buf, offset) {
     b[i + n] = node[n];
   }
 
-  return buf || (0, _stringify.default)(b);
+  return buf || (0,_stringify_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */.Z)(b);
 }
 
-var _default = v1;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (v1);
 
-/***/ }),
-
-/***/ 638:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"503": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var _v35_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */var _md5_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(452);
 
 
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
+const v3 = (0,_v35_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.ZP)('v3', 0x30, _md5_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */.Z);
+/* harmony default export */ __webpack_exports__.Z = (v3);
 
-var _v = _interopRequireDefault(__nccwpck_require__(694));
-
-var _md = _interopRequireDefault(__nccwpck_require__(276));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const v3 = (0, _v.default)('v3', 0x30, _md.default);
-var _default = v3;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 694:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"81": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+__webpack_require__.d(__webpack_exports__, {
+  ZP: function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
+});
+/* harmony import */var _stringify_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */var _parse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(350);
 
 
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = _default;
-exports.URL = exports.DNS = void 0;
-
-var _stringify = _interopRequireDefault(__nccwpck_require__(729));
-
-var _parse = _interopRequireDefault(__nccwpck_require__(951));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function stringToBytes(str) {
   str = unescape(encodeURIComponent(str)); // UTF8 escape
@@ -2530,18 +2331,15 @@ function stringToBytes(str) {
 }
 
 const DNS = '6ba7b810-9dad-11d1-80b4-00c04fd430c8';
-exports.DNS = DNS;
 const URL = '6ba7b811-9dad-11d1-80b4-00c04fd430c8';
-exports.URL = URL;
-
-function _default(name, version, hashfunc) {
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(name, version, hashfunc) {
   function generateUUID(value, namespace, buf, offset) {
     if (typeof value === 'string') {
       value = stringToBytes(value);
     }
 
     if (typeof namespace === 'string') {
-      namespace = (0, _parse.default)(namespace);
+      namespace = (0,_parse_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.Z)(namespace);
     }
 
     if (namespace.length !== 16) {
@@ -2568,7 +2366,7 @@ function _default(name, version, hashfunc) {
       return buf;
     }
 
-    return (0, _stringify.default)(bytes);
+    return (0,_stringify_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */.Z)(bytes);
   } // Function#name is not settable on some platforms (#270)
 
 
@@ -2582,30 +2380,17 @@ function _default(name, version, hashfunc) {
   return generateUUID;
 }
 
-/***/ }),
-
-/***/ 519:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"52": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var _rng_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(959);
+/* harmony import */var _stringify_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _rng = _interopRequireDefault(__nccwpck_require__(548));
-
-var _stringify = _interopRequireDefault(__nccwpck_require__(729));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function v4(options, buf, offset) {
   options = options || {};
-
-  const rnds = options.random || (options.rng || _rng.default)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-
+  const rnds = options.random || (options.rng || _rng_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.Z)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
 
   rnds[6] = rnds[6] & 0x0f | 0x40;
   rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
@@ -2620,252 +2405,370 @@ function v4(options, buf, offset) {
     return buf;
   }
 
-  return (0, _stringify.default)(rnds);
+  return (0,_stringify_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */.Z)(rnds);
 }
 
-var _default = v4;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (v4);
 
-/***/ }),
-
-/***/ 239:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"870": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var _v35_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */var _sha1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(285);
 
 
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
+const v5 = (0,_v35_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.ZP)('v5', 0x50, _sha1_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */.Z);
+/* harmony default export */ __webpack_exports__.Z = (v5);
 
-var _v = _interopRequireDefault(__nccwpck_require__(694));
-
-var _sha = _interopRequireDefault(__nccwpck_require__(557));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const v5 = (0, _v.default)('v5', 0x50, _sha.default);
-var _default = v5;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ 9:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"158": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var _regex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(405);
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _regex = _interopRequireDefault(__nccwpck_require__(646));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function validate(uuid) {
-  return typeof uuid === 'string' && _regex.default.test(uuid);
+  return typeof uuid === 'string' && _regex_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"].test */.Z.test(uuid);
 }
 
-var _default = validate;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (validate);
 
-/***/ }),
-
-/***/ 609:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
+}),
+"219": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
+/* harmony import */var _validate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(158);
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _validate = _interopRequireDefault(__nccwpck_require__(9));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function version(uuid) {
-  if (!(0, _validate.default)(uuid)) {
+  if (!(0,_validate_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */.Z)(uuid)) {
     throw TypeError('Invalid UUID');
   }
 
   return parseInt(uuid.substr(14, 1), 16);
 }
 
-var _default = version;
-exports["default"] = _default;
+/* harmony default export */ __webpack_exports__.Z = (version);
 
-/***/ }),
-
-/***/ 474:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core_1 = __nccwpck_require__(733);
-function run() {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("Hello, World!");
-    });
-}
-run().catch((err) => {
-    console.error(err);
-    (0, core_1.setFailed)(err);
-    process.exit(1);
-});
-
-
-/***/ }),
-
-/***/ 491:
-/***/ ((module) => {
-
+}),
+"491": (function (module) {
 "use strict";
 module.exports = require("assert");
 
-/***/ }),
-
-/***/ 113:
-/***/ ((module) => {
-
+}),
+"113": (function (module) {
 "use strict";
 module.exports = require("crypto");
 
-/***/ }),
-
-/***/ 361:
-/***/ ((module) => {
-
+}),
+"361": (function (module) {
 "use strict";
 module.exports = require("events");
 
-/***/ }),
-
-/***/ 147:
-/***/ ((module) => {
-
+}),
+"147": (function (module) {
 "use strict";
 module.exports = require("fs");
 
-/***/ }),
-
-/***/ 685:
-/***/ ((module) => {
-
+}),
+"685": (function (module) {
 "use strict";
 module.exports = require("http");
 
-/***/ }),
-
-/***/ 687:
-/***/ ((module) => {
-
+}),
+"687": (function (module) {
 "use strict";
 module.exports = require("https");
 
-/***/ }),
-
-/***/ 808:
-/***/ ((module) => {
-
+}),
+"808": (function (module) {
 "use strict";
 module.exports = require("net");
 
-/***/ }),
+}),
+"742": (function (module) {
+"use strict";
+module.exports = require("node:process");
 
-/***/ 37:
-/***/ ((module) => {
-
+}),
+"37": (function (module) {
 "use strict";
 module.exports = require("os");
 
-/***/ }),
-
-/***/ 17:
-/***/ ((module) => {
-
+}),
+"17": (function (module) {
 "use strict";
 module.exports = require("path");
 
-/***/ }),
-
-/***/ 404:
-/***/ ((module) => {
-
+}),
+"404": (function (module) {
 "use strict";
 module.exports = require("tls");
 
-/***/ }),
-
-/***/ 837:
-/***/ ((module) => {
-
+}),
+"837": (function (module) {
 "use strict";
 module.exports = require("util");
 
-/***/ })
+}),
 
-/******/ 	});
+});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __nccwpck_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
-/******/ 		}
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
+// The module cache
+var __webpack_module_cache__ = {};
+
+// The require function
+function __webpack_require__(moduleId) {
+
+// Check if module is in cache
+var cachedModule = __webpack_module_cache__[moduleId];
+if (cachedModule !== undefined) {
+return cachedModule.exports;
+}
+// Create a new module (and put it into the cache)
+var module = (__webpack_module_cache__[moduleId] = {
+exports: {}
+});
+// Execute the module function
+__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+// Return the exports of the module
+return module.exports;
+
+}
+
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat */
-/******/ 	
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/ 	
+// webpack/runtime/compat_get_default_export
+(() => {
+// getDefaultExport function for compatibility with non-harmony modules
+__webpack_require__.n = function (module) {
+	var getter = module && module.__esModule ?
+		function () { return module['default']; } :
+		function () { return module; };
+	__webpack_require__.d(getter, { a: getter });
+	return getter;
+};
+
+
+
+
+})();
+// webpack/runtime/define_property_getters
+(() => {
+__webpack_require__.d = function(exports, definition) {
+	for(var key in definition) {
+        if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+            Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+        }
+    }
+};
+})();
+// webpack/runtime/has_own_property
+(() => {
+__webpack_require__.o = function (obj, prop) {
+	return Object.prototype.hasOwnProperty.call(obj, prop);
+};
+
+})();
+// webpack/runtime/make_namespace_object
+(() => {
+// define __esModule on exports
+__webpack_require__.r = function(exports) {
+	if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+	}
+	Object.defineProperty(exports, '__esModule', { value: true });
+};
+
+})();
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(474);
-/******/ 	module.exports = __webpack_exports__;
-/******/ 	
-/******/ })()
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */var node_process__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(742);
+/* harmony import */var node_process__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_process__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(441);
+/* harmony import */var _actions_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_1__);
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+    try {
+        var info = gen[key](arg);
+        var value = info.value;
+    } catch (error) {
+        reject(error);
+        return;
+    }
+    if (info.done) {
+        resolve(value);
+    } else {
+        Promise.resolve(value).then(_next, _throw);
+    }
+}
+function _async_to_generator(fn) {
+    return function() {
+        var self = this, args = arguments;
+        return new Promise(function(resolve, reject) {
+            var gen = fn.apply(self, args);
+            function _next(value) {
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+            }
+            function _throw(err) {
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+            }
+            _next(undefined);
+        });
+    };
+}
+function _ts_generator(thisArg, body) {
+    var f, y, t, g, _ = {
+        label: 0,
+        sent: function() {
+            if (t[0] & 1) throw t[1];
+            return t[1];
+        },
+        trys: [],
+        ops: []
+    };
+    return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+    }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+        return this;
+    }), g;
+    function verb(n) {
+        return function(v) {
+            return step([
+                n,
+                v
+            ]);
+        };
+    }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while(_)try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [
+                op[0] & 2,
+                t.value
+            ];
+            switch(op[0]){
+                case 0:
+                case 1:
+                    t = op;
+                    break;
+                case 4:
+                    _.label++;
+                    return {
+                        value: op[1],
+                        done: false
+                    };
+                case 5:
+                    _.label++;
+                    y = op[1];
+                    op = [
+                        0
+                    ];
+                    continue;
+                case 7:
+                    op = _.ops.pop();
+                    _.trys.pop();
+                    continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                        _ = 0;
+                        continue;
+                    }
+                    if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                        _.label = op[1];
+                        break;
+                    }
+                    if (op[0] === 6 && _.label < t[1]) {
+                        _.label = t[1];
+                        t = op;
+                        break;
+                    }
+                    if (t && _.label < t[2]) {
+                        _.label = t[2];
+                        _.ops.push(op);
+                        break;
+                    }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop();
+                    continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) {
+            op = [
+                6,
+                e
+            ];
+            y = 0;
+        } finally{
+            f = t = 0;
+        }
+        if (op[0] & 5) throw op[1];
+        return {
+            value: op[0] ? op[1] : void 0,
+            done: true
+        };
+    }
+}
+
+
+function run() {
+    return _run.apply(this, arguments);
+}
+function _run() {
+    _run = // const REGISTRIES = {
+    //   VSCE: 'https://marketplace.visualstudio.com',
+    //   OVSX: 'https://open-vsx.org',
+    // } as const
+    // type Registry = keyof typeof REGISTRIES
+    // async function getExtensionFile(_extensionFile: string) {
+    // }
+    _async_to_generator(function() {
+        var _token, _registry, _extensionPath, _listFiles, _publish, _preRelease;
+        return _ts_generator(this, function(_state) {
+            _token = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("token", {
+                required: true
+            });
+            _registry = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("registry");
+            _extensionPath = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("extensionPath");
+            _listFiles = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getBooleanInput)("debugVSIXFile");
+            _publish = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getBooleanInput)("publish");
+            _preRelease = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getBooleanInput)("preRelease");
+            return [
+                2
+            ];
+        });
+    // if (!Object.keys(REGISTRIES).includes(registry.toUpperCase())) {
+    //   setFailed(`Invalid registry, must be one of: ${Object.keys(REGISTRIES).join(', ')}`)
+    // }
+    // const registryUrl = REGISTRIES[registry.toUpperCase() as Registry]
+    // setOutput('registryUrl', registryUrl)
+    // setOutput('registry', registry)
+    // if (!extensionPath) {
+    //   if (!existsSync(extensionPath)) {
+    //     setFailed(`File not found: ${extensionPath}`)
+    //   }
+    //   extensionPath = await getExtensionFile(extensionPath)
+    //   setOutput('extensionFile', extensionPath)
+    // }
+    // if (publish) {
+    //   console.log('Publishing extension')
+    // }
+    });
+    return _run.apply(this, arguments);
+}
+run().catch(function(err) {
+    console.error(err);
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed)(err);
+    node_process__WEBPACK_IMPORTED_MODULE_0___default().exit(1);
+});
+
+})();
+
+module.exports = __webpack_exports__;
+})()
 ;
 //# sourceMappingURL=index.js.map
