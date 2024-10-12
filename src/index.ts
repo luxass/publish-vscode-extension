@@ -7,7 +7,7 @@ async function run() {
 	});
 	const _registry = core.getInput("registry");
 	const _extensionPath = core.getInput("extensionPath");
-	const _listFiles = core.getBooleanInput("debugVSIXFile");
+	const _listFiles = core.getBooleanInput("debug");
 	const _publish = core.getBooleanInput("publish");
 	const _preRelease = core.getBooleanInput("preRelease");
 

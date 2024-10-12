@@ -21,8 +21,8 @@ inputs:
     description: Path to VSIX File or path the extension you want to publish.
     required: false
 
-  debugVSIXFile:
-    description: "List of files in the VSIX package, for debugging purposes."
+  debug:
+    description: "Show debug information. (This is not the same as enabling debug logging for the workflow rerun)"
     required: false
     default: "false"
 

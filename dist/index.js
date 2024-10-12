@@ -3636,7 +3636,7 @@ function _run() {
             });
             _registry = core.getInput("registry");
             _extensionPath = core.getInput("extensionPath");
-            _listFiles = core.getBooleanInput("debugVSIXFile");
+            _listFiles = core.getBooleanInput("debug");
             _publish = core.getBooleanInput("publish");
             _preRelease = core.getBooleanInput("preRelease");
             core.info("Hello, World!");
