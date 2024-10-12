@@ -1,6 +1,7 @@
 import * as core from "@actions/core";
 import { REGISTRIES } from "./constants";
 import * as fs from "node:fs";
+import { createVsix } from "./vsix";
 
 async function run() {
 	const _token = core.getInput("token", {
@@ -45,6 +46,9 @@ async function run() {
 	}
 
 	if (!isFile) {
+		const result = await createVsix({ dir: extensionPath, outfile: "extension.vsix", dry: dryRun });
+
+		core.info(`created vsix at: ${JSON.stringify(result, null, 2)}`);
 
 	} else {
 		core.info("extension is already packaged, skipping.")

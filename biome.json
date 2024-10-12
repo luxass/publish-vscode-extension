@@ -2,7 +2,10 @@
   "$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["dist/**"]
+    "ignore": [
+      "dist/**",
+      "./src/vsce/**/*"
+    ]
   },
   "formatter": {
     "indentStyle": "tab",
