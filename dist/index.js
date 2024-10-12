@@ -3486,18 +3486,25 @@ __webpack_require__.o = function (obj, prop) {
 };
 
 })();
+// webpack/runtime/make_namespace_object
+(() => {
+// define __esModule on exports
+__webpack_require__.r = function(exports) {
+	if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+	}
+	Object.defineProperty(exports, '__esModule', { value: true });
+};
+
+})();
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-
-;// CONCATENATED MODULE: external "node:process"
-const external_node_process_namespaceObject = require("node:process");
-var external_node_process_default = /*#__PURE__*/__webpack_require__.n(external_node_process_namespaceObject);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/core.js
-var core = __webpack_require__("592");
-;// CONCATENATED MODULE: ./src/index.ts
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(592);
+/* harmony import */var _actions_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_0__);
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
     try {
         var info = gen[key](arg);
@@ -3623,7 +3630,6 @@ function _ts_generator(thisArg, body) {
     }
 }
 
-
 function run() {
     return _run.apply(this, arguments);
 }
@@ -3631,17 +3637,17 @@ function _run() {
     _run = _async_to_generator(function() {
         var _token, registry, extensionPath, debug, publish, preRelease, dryRun;
         return _ts_generator(this, function(_state) {
-            _token = core.getInput("token", {
+            _token = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("token", {
                 required: true
             });
-            registry = core.getInput("registry");
-            extensionPath = core.getInput("extensionPath");
-            debug = core.getBooleanInput("debug");
-            publish = core.getBooleanInput("publish");
-            preRelease = core.getBooleanInput("preRelease");
-            dryRun = core.getBooleanInput("dry-run");
-            core.info("Hello, World!");
-            core.info(JSON.stringify({
+            registry = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("registry");
+            extensionPath = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("extensionPath");
+            debug = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("debug");
+            publish = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("publish");
+            preRelease = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("preRelease");
+            dryRun = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("dry-run");
+            _actions_core__WEBPACK_IMPORTED_MODULE_0__.info("Hello, World!");
+            _actions_core__WEBPACK_IMPORTED_MODULE_0__.info(JSON.stringify({
                 registry: registry,
                 extensionPath: extensionPath,
                 debug: debug,
@@ -3658,8 +3664,7 @@ function _run() {
 }
 run().catch(function(err) {
     console.error(err);
-    core.setFailed(err);
-    external_node_process_default().exit(1);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed(err);
 });
 
 })();

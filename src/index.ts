@@ -1,4 +1,3 @@
-import process from "node:process";
 import * as core from "@actions/core";
 
 async function run() {
@@ -26,5 +25,4 @@ async function run() {
 run().catch((err) => {
 	console.error(err);
 	core.setFailed(err);
-	process.exit(1);
 });
