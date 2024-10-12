@@ -20,6 +20,7 @@ inputs:
   extensionPath:
     description: Path to VSIX File or path the extension you want to publish.
     required: false
+    default: "./"
 
   debug:
     description: "Show debug information. (This is not the same as enabling debug logging for the workflow rerun)"
