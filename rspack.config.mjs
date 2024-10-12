@@ -19,17 +19,17 @@ export default {
   },
   module: {
     rules: [
-			{
-				test: /\.node$/,
-				use: [
-					{
-						loader: 'node-loader',
-						options: {
-							name: '[name].[ext]',
-						},
-					},
-				],
-			},
+			// {
+			// 	test: /\.node$/,
+			// 	use: [
+			// 		{
+			// 			loader: 'node-loader',
+			// 			options: {
+			// 				name: '[name].[ext]',
+			// 			},
+			// 		},
+			// 	],
+			// },
       {
         test: /\.ts$/,
         exclude: [/node_modules/],
@@ -47,5 +47,8 @@ export default {
   },
   optimization: {
     minimize: false,
-  }
+  },
+  externals: {
+    keytar: "commonjs keytar",
+  },
 };
