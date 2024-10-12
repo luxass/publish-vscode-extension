@@ -19,17 +19,6 @@ export default {
   },
   module: {
     rules: [
-			// {
-			// 	test: /\.node$/,
-			// 	use: [
-			// 		{
-			// 			loader: 'node-loader',
-			// 			options: {
-			// 				name: '[name].[ext]',
-			// 			},
-			// 		},
-			// 	],
-			// },
       {
         test: /\.ts$/,
         exclude: [/node_modules/],
