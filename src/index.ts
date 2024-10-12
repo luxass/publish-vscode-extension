@@ -1,7 +1,6 @@
 import * as core from "@actions/core";
 import { REGISTRIES } from "./constants";
 import * as fs from "node:fs";
-import * as path from "node:path";
 
 async function run() {
 	const _token = core.getInput("token", {
@@ -45,22 +44,13 @@ async function run() {
 		return;
 	}
 
-	core.info(`extensionPath is a ${isFile ? "file" : "directory"}`);
+	if (!isFile) {
 
-	const publish = core.getBooleanInput("publish");
+	} else {
+		core.info("extension is already packaged, skipping.")
+	}
+
 	const preRelease = core.getBooleanInput("preRelease");
-
-	core.info("Hello, World!");
-	core.info(
-		JSON.stringify({
-			registry,
-			extensionPath,
-			debug,
-			publish,
-			preRelease,
-			dryRun,
-		}),
-	);
 }
 
 run().catch((err) => {

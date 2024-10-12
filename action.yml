@@ -32,12 +32,7 @@ inputs:
     required: false
     default: "false"
 
-  publish:
-    description: Publish the extension.
-    required: false
-    default: "true"
-
-  preRelease:
+  pre-release:
     description: Mark the extension as pre-release extension.
     required: false
     default: "false"

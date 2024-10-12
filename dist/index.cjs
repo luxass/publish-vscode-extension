@@ -3602,7 +3602,7 @@ function run() {
 }
 function _run() {
     _run = _async_to_generator(function() {
-        var _token, registry, debug, dryRun, extensionPath, isFile, isDirectory, publish, preRelease;
+        var _token, registry, debug, dryRun, extensionPath, isFile, isDirectory, preRelease;
         return _ts_generator(this, function(_state) {
             _token = core.getInput("token", {
                 required: true
@@ -3642,18 +3642,10 @@ function _run() {
                     2
                 ];
             }
-            core.info("extensionPath is a ".concat(isFile ? "file" : "directory"));
-            publish = core.getBooleanInput("publish");
+            if (!isFile) {} else {
+                core.info("extension is already packaged, skipping.");
+            }
             preRelease = core.getBooleanInput("preRelease");
-            core.info("Hello, World!");
-            core.info(JSON.stringify({
-                registry: registry,
-                extensionPath: extensionPath,
-                debug: debug,
-                publish: publish,
-                preRelease: preRelease,
-                dryRun: dryRun
-            }));
             return [
                 2
             ];
