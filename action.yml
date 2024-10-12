@@ -26,6 +26,11 @@ inputs:
     required: false
     default: "false"
 
+  dry-run:
+    description: "Do not publish the extension, but show the information that would be sent to the registry."
+    required: false
+    default: "false"
+
   publish:
     description: Publish the extension.
     required: false

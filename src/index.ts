@@ -5,13 +5,22 @@ async function run() {
 	const _token = core.getInput("token", {
 		required: true,
 	});
-	const _registry = core.getInput("registry");
-	const _extensionPath = core.getInput("extensionPath");
-	const _listFiles = core.getBooleanInput("debug");
-	const _publish = core.getBooleanInput("publish");
-	const _preRelease = core.getBooleanInput("preRelease");
+	const registry = core.getInput("registry");
+	const extensionPath = core.getInput("extensionPath");
+	const debug = core.getBooleanInput("debug");
+	const publish = core.getBooleanInput("publish");
+	const preRelease = core.getBooleanInput("preRelease");
+	const dryRun = core.getBooleanInput("dry-run");
 
 	core.info("Hello, World!");
+	core.info(JSON.stringify({
+		registry,
+		extensionPath,
+		debug,
+		publish,
+		preRelease,
+		dryRun
+	}))
 }
 
 run().catch((err) => {

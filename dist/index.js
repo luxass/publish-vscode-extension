@@ -3629,17 +3629,26 @@ function run() {
 }
 function _run() {
     _run = _async_to_generator(function() {
-        var _token, _registry, _extensionPath, _listFiles, _publish, _preRelease;
+        var _token, registry, extensionPath, debug, publish, preRelease, dryRun;
         return _ts_generator(this, function(_state) {
             _token = core.getInput("token", {
                 required: true
             });
-            _registry = core.getInput("registry");
-            _extensionPath = core.getInput("extensionPath");
-            _listFiles = core.getBooleanInput("debug");
-            _publish = core.getBooleanInput("publish");
-            _preRelease = core.getBooleanInput("preRelease");
+            registry = core.getInput("registry");
+            extensionPath = core.getInput("extensionPath");
+            debug = core.getBooleanInput("debug");
+            publish = core.getBooleanInput("publish");
+            preRelease = core.getBooleanInput("preRelease");
+            dryRun = core.getBooleanInput("dry-run");
             core.info("Hello, World!");
+            core.info(JSON.stringify({
+                registry: registry,
+                extensionPath: extensionPath,
+                debug: debug,
+                publish: publish,
+                preRelease: preRelease,
+                dryRun: dryRun
+            }));
             return [
                 2
             ];
