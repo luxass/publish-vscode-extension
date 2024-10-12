@@ -50,7 +50,7 @@ async function run() {
 		core.info("extension is already packaged, skipping.")
 	}
 
-	const preRelease = core.getBooleanInput("preRelease");
+	const preRelease = core.getBooleanInput("pre-release");
 }
 
 run().catch((err) => {

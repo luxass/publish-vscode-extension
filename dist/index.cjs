@@ -3645,7 +3645,7 @@ function _run() {
             if (!isFile) {} else {
                 core.info("extension is already packaged, skipping.");
             }
-            preRelease = core.getBooleanInput("preRelease");
+            preRelease = core.getBooleanInput("pre-release");
             return [
                 2
             ];
