@@ -3454,57 +3454,22 @@ return module.exports;
 }
 
 /************************************************************************/
-// webpack/runtime/compat_get_default_export
-(() => {
-// getDefaultExport function for compatibility with non-harmony modules
-__webpack_require__.n = function (module) {
-	var getter = module && module.__esModule ?
-		function () { return module['default']; } :
-		function () { return module; };
-	__webpack_require__.d(getter, { a: getter });
-	return getter;
-};
-
-
-
-
-})();
-// webpack/runtime/define_property_getters
-(() => {
-__webpack_require__.d = function(exports, definition) {
-	for(var key in definition) {
-        if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-            Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-        }
-    }
-};
-})();
-// webpack/runtime/has_own_property
-(() => {
-__webpack_require__.o = function (obj, prop) {
-	return Object.prototype.hasOwnProperty.call(obj, prop);
-};
-
-})();
-// webpack/runtime/make_namespace_object
-(() => {
-// define __esModule on exports
-__webpack_require__.r = function(exports) {
-	if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-	}
-	Object.defineProperty(exports, '__esModule', { value: true });
-};
-
-})();
-/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(592);
-/* harmony import */var _actions_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_0__);
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/core.js
+var core = __webpack_require__("592");
+;// CONCATENATED MODULE: ./src/constants.ts
+var REGISTRIES = {
+    "open-vsx": "https://open-vsx.org",
+    "vs-marketplace": "https://marketplace.visualstudio.com"
+};
+
+;// CONCATENATED MODULE: external "node:fs"
+const external_node_fs_namespaceObject = require("node:fs");
+;// CONCATENATED MODULE: ./src/index.ts
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
     try {
         var info = gen[key](arg);
@@ -3630,24 +3595,58 @@ function _ts_generator(thisArg, body) {
     }
 }
 
+
+
 function run() {
     return _run.apply(this, arguments);
 }
 function _run() {
     _run = _async_to_generator(function() {
-        var _token, registry, extensionPath, debug, publish, preRelease, dryRun;
+        var _token, registry, debug, dryRun, extensionPath, isFile, isDirectory, publish, preRelease;
         return _ts_generator(this, function(_state) {
-            _token = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("token", {
+            _token = core.getInput("token", {
                 required: true
             });
-            registry = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("registry");
-            extensionPath = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("extensionPath");
-            debug = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("debug");
-            publish = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("publish");
-            preRelease = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("preRelease");
-            dryRun = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getBooleanInput("dry-run");
-            _actions_core__WEBPACK_IMPORTED_MODULE_0__.info("Hello, World!");
-            _actions_core__WEBPACK_IMPORTED_MODULE_0__.info(JSON.stringify({
+            registry = core.getInput("registry", {
+                trimWhitespace: true
+            });
+            debug = core.getBooleanInput("debug");
+            dryRun = core.getBooleanInput("dry-run");
+            if (debug) {
+                core.warning("running with debug mode enabled");
+            }
+            if (dryRun) {
+                core.warning("running with dry-run mode enabled");
+            }
+            if (!URL.canParse(registry) && !Object.keys(REGISTRIES).includes(registry)) {
+                core.setFailed("invalid registry used: ".concat(registry));
+                return [
+                    2
+                ];
+            }
+            extensionPath = core.getInput("extensionPath", {
+                trimWhitespace: true
+            });
+            core.debug("extensionPath: ".concat(extensionPath));
+            if (!external_node_fs_namespaceObject.existsSync(extensionPath)) {
+                core.setFailed("extensionPath is not a valid path");
+                return [
+                    2
+                ];
+            }
+            isFile = external_node_fs_namespaceObject.lstatSync(extensionPath).isFile();
+            isDirectory = external_node_fs_namespaceObject.lstatSync(extensionPath).isDirectory();
+            if (!isFile && !isDirectory) {
+                core.setFailed("extensionPath is not a valid path");
+                return [
+                    2
+                ];
+            }
+            core.info("extensionPath is a ".concat(isFile ? "file" : "directory"));
+            publish = core.getBooleanInput("publish");
+            preRelease = core.getBooleanInput("preRelease");
+            core.info("Hello, World!");
+            core.info(JSON.stringify({
                 registry: registry,
                 extensionPath: extensionPath,
                 debug: debug,
@@ -3664,7 +3663,7 @@ function _run() {
 }
 run().catch(function(err) {
     console.error(err);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed(err);
+    core.setFailed(err);
 });
 
 })();
