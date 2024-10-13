@@ -34,9 +34,6 @@ export default {
       },
     ],
   },
-  optimization: {
-    minimize: false,
-  },
   externals: {
     keytar: "commonjs keytar",
   },
