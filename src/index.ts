@@ -3,7 +3,7 @@ import { REGISTRIES } from "./constants";
 import * as fs from "node:fs";
 import { createVsix } from "./vsix";
 import { publishVSIX as publishVSCE } from "@vscode/vsce";
-import { publish as publishOVSX } from "ovsx"
+import { publish as publishOVSX } from "ovsx";
 
 async function run() {
 	const token = core.getInput("token", {
@@ -30,7 +30,6 @@ async function run() {
 		return;
 	}
 
-
 	const extensionPath = core.getInput("extensionPath", {
 		trimWhitespace: true,
 	});
@@ -56,12 +55,11 @@ async function run() {
 
 		core.info(`created vsix at: ${JSON.stringify(result, null, 2)}`);
 
-		extensionFile = result.outfile
+		extensionFile = result.outfile;
 	} else {
 		extensionFile = extensionPath;
-		core.info("extension is already packaged, skipping.")
+		core.info("extension is already packaged, skipping.");
 	}
-
 
 	const preRelease = core.getBooleanInput("pre-release");
 
@@ -78,12 +76,19 @@ async function run() {
 
 		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
 	} else {
-		const result = await publishOVSX({
+		const results = await publishOVSX({
 			pat: token,
 			preRelease,
-		})
+			packagePath: [extensionFile],
+		});
 
-		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
+		for (const result of results) {
+			if (result.status === "rejected") {
+				throw result.reason;
+			}
+		}
+
+		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(results, null, 2)}`);
 	}
 }
 
