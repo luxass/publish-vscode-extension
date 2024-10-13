@@ -62,11 +62,9 @@ async function run() {
 	}
 
 	const preRelease = core.getBooleanInput("pre-release");
-	const targets = core.getInput("targets");
-	const multilineTargets = core.getMultilineInput("targets");
+	const rawTargets = core.getInput("targets");
 
-	core.info(`targets: ${targets}`);
-	core.info(`multilineTargets: ${JSON.stringify(multilineTargets, null, 2)}`);
+	const targets = rawTargets.split(",").map((target) => target.trim()).filter(Boolean);
 
 	if (dryRun) {
 		core.info("dry-run enabled, skipping publish");
@@ -78,7 +76,7 @@ async function run() {
 		const result = await publishVSCE(extensionFile, {
 			pat: token,
 			preRelease,
-			// targets
+			targets
 		});
 
 		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
@@ -87,7 +85,7 @@ async function run() {
 			pat: token,
 			preRelease,
 			packagePath: [extensionFile],
-			// targets:
+			targets
 		});
 
 		for (const result of results) {
