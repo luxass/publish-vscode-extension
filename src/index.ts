@@ -25,7 +25,7 @@ async function run() {
 		core.warning("running with dry-run mode enabled");
 	}
 
-	if (!Object.keys(REGISTRIES).includes(registry)) {
+	if (!URL.canParse(registry) && !Object.keys(REGISTRIES).includes(registry)) {
 		core.setFailed(`invalid registry used: ${registry}`);
 		return;
 	}
