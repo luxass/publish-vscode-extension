@@ -1,5 +1,4 @@
 import * as core from "@actions/core";
-import { REGISTRIES } from "./constants";
 import * as fs from "node:fs";
 import { createVsix } from "./vsix";
 import { publishVSIX as publishVSCE } from "@vscode/vsce";
@@ -79,9 +78,26 @@ async function run() {
 		return;
 	}
 
+	const rawTargets = core.getInput("targets");
+
+	const targets = rawTargets
+		.split(",")
+		.map((target) => target.trim())
+		.filter(Boolean);
+
+	const preRelease = core.getBooleanInput("pre-release");
+
 	let extensionFile: string;
 	if (!isFile) {
-		const result = await createVsix({ dir: extensionPath, outfile: "extension.vsix", dry: dryRun });
+		const result = await createVsix(
+			{ dir: extensionPath, outfile: "extension.vsix", dry: dryRun },
+			{
+				target: targets.join(" "),
+				preRelease,
+				baseImagesUrl: baseImagesUrl ?? undefined,
+				baseContentUrl: baseContentUrl ?? undefined,
+			},
+		);
 
 		core.info(`created vsix at: ${JSON.stringify(result, null, 2)}`);
 
@@ -90,14 +106,6 @@ async function run() {
 		extensionFile = extensionPath;
 		core.info("extension is already packaged, skipping.");
 	}
-
-	const preRelease = core.getBooleanInput("pre-release");
-	const rawTargets = core.getInput("targets");
-
-	const targets = rawTargets
-		.split(",")
-		.map((target) => target.trim())
-		.filter(Boolean);
 
 	if (dryRun) {
 		core.info("dry-run enabled, skipping publish");
@@ -108,7 +116,7 @@ async function run() {
 		const result = await publishVSCE(extensionFile, {
 			pat: token,
 			preRelease,
-			// targets,
+			targets,
 			baseContentUrl: baseContentUrl ?? undefined,
 			baseImagesUrl: baseImagesUrl ?? undefined,
 			skipDuplicate: failSilently,
@@ -120,7 +128,7 @@ async function run() {
 			pat: token,
 			preRelease,
 			packagePath: [extensionFile],
-			// targets,
+			targets,
 			baseContentUrl: baseContentUrl ?? undefined,
 			baseImagesUrl: baseImagesUrl ?? undefined,
 			skipDuplicate: failSilently,
