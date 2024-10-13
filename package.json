@@ -24,7 +24,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "build": "rspack build",
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.cjs --external:keytar",
     "lint": "biome lint",
     "lint:fix": "biome lint --write",
     "format": "biome format",
@@ -52,8 +52,6 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
     "@pnpm/types": "^12.2.0",
-    "@rspack/cli": "^1.0.10",
-    "@rspack/core": "^1.0.10",
     "@types/hosted-git-info": "^3.0.2",
     "@types/markdown-it": "^12.2.3",
     "@types/mime": "^1",
@@ -65,6 +63,7 @@
     "@types/xml2js": "^0.4.11",
     "@types/yauzl": "^2.10.0",
     "@types/yazl": "^2.4.2",
+    "esbuild": "^0.24.0",
     "typescript": "^5.6.3"
   }
 }
