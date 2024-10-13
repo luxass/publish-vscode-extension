@@ -8,6 +8,7 @@ import { getValidatedInput } from "actions-kit";
 import { z } from "zod";
 
 async function run() {
+	core.info(JSON.stringify(core.inputs, null, 2));
 	const token = core.getInput(core.inputs.token, {
 		required: true,
 	});
