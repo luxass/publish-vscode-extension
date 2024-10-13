@@ -1,5 +1,5 @@
 // @ts-check
-import rspack from "@rspack/core";
+import actionsKit from "actions-kit/unplugin/rspack"
 import { resolve } from "node:path";
 
 /** @type {import("@rspack/core").Configuration} */
@@ -41,6 +41,11 @@ export default {
 			}
 		},
 	},
+	plugins: [
+		actionsKit({
+			actionPath: "./action.yml"
+		})
+	],
   externals: {
     keytar: "commonjs keytar",
   },

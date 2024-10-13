@@ -1,3 +1,4 @@
+/// <reference types="../actions-kit.d.ts" />
 import * as core from "@actions/core";
 import * as fs from "node:fs";
 import { createVsix } from "./vsix";
@@ -7,7 +8,7 @@ import { getValidatedInput } from "actions-kit";
 import { z } from "zod";
 
 async function run() {
-	const token = core.getInput("token", {
+	const token = core.getInput(core.inputs.token, {
 		required: true,
 	});
 
@@ -56,8 +57,6 @@ async function run() {
 	});
 
 	const failSilently = core.getBooleanInput("fail-silently");
-
-	core.info(`fail-silently: ${failSilently}`);
 
 	const extensionPath = core.getInput("extension-path", {
 		trimWhitespace: true,

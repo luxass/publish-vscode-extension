@@ -11,5 +11,7 @@
   "editor.codeActionsOnSave": {
     "quickFix.biome": "explicit",
     "source.fixAll.biome": "explicit"
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsserver.log": "verbose",
 }
