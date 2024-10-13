@@ -9,20 +9,13 @@ export default {
   entry: "./src/index.ts",
   output: {
     path: resolve(import.meta.dirname, "dist"),
-    // filename: "index.cjs",
-		filename: '[name].bundle.js',
-    chunkFilename: '[name].[contenthash].js',
+    filename: "index.cjs",
     library: {
       type: "commonjs2",
     },
   },
   resolve: {
     extensions: [".ts", ".js"],
-  },
-	optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
   },
   module: {
     rules: [
@@ -41,6 +34,13 @@ export default {
       },
     ],
   },
+	experiments: {
+		rspackFuture: {
+			bundlerInfo: {
+				force: true
+			}
+		},
+	},
   externals: {
     keytar: "commonjs keytar",
   },
