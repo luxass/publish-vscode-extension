@@ -47,8 +47,8 @@ inputs:
     required: false
     default: "false"
 
-  target:
-    description: "Target architecture(s) the extension should run on."
+  targets:
+    description: "Target architecture(s) the extension should run on. (Comma separated list)"
     required: false
 
 outputs:

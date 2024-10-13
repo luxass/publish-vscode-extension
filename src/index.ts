@@ -62,9 +62,11 @@ async function run() {
 	}
 
 	const preRelease = core.getBooleanInput("pre-release");
-	const targets = core.getInput("target");
+	const targets = core.getInput("targets");
+	const multilineTargets = core.getMultilineInput("targets");
 
 	core.info(`targets: ${targets}`);
+	core.info(`multilineTargets: ${JSON.stringify(multilineTargets, null, 2)}`);
 
 	if (dryRun) {
 		core.info("dry-run enabled, skipping publish");
