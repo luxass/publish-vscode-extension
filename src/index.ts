@@ -62,15 +62,15 @@ async function run() {
 	}
 
 	const preRelease = core.getBooleanInput("pre-release");
+	const targets = core.getInput("target");
+
+	core.info(`targets: ${targets}`);
 
 	if (dryRun) {
 		core.info("dry-run enabled, skipping publish");
 		return;
 	}
 
-	const targets = core.getInput("target");
-
-	core.info(`targets: ${targets}`);
 
 	if (registry === "vs-marketplace") {
 		const result = await publishVSCE(extensionFile, {
