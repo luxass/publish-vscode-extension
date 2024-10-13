@@ -58,6 +58,8 @@ async function run() {
 
 	const failSilently = core.getBooleanInput("fail-silently");
 
+	core.info(`fail-silently: ${failSilently}`);
+
 	const extensionPath = core.getInput("extension-path", {
 		trimWhitespace: true,
 	});
