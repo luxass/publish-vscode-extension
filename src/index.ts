@@ -68,10 +68,15 @@ async function run() {
 		return;
 	}
 
+	const targets = core.getInput("targets");
+
+	core.info(`targets: ${targets}`);
+
 	if (registry === "vs-marketplace") {
 		const result = await publishVSCE(extensionFile, {
 			pat: token,
 			preRelease,
+			// targets
 		});
 
 		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
@@ -80,6 +85,7 @@ async function run() {
 			pat: token,
 			preRelease,
 			packagePath: [extensionFile],
+			// targets:
 		});
 
 		for (const result of results) {

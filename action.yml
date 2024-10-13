@@ -47,6 +47,10 @@ inputs:
     required: false
     default: "false"
 
+  target:
+    description: "Target architecture(s) the extension should run on."
+    required: false
+
 outputs:
   vsix:
     description: The path to the VSIX file.
