@@ -9,17 +9,12 @@ import { z } from "zod";
 
 
 async function run() {
-	const token = core.getInput(inputs.token, {
+	const token = core.getInput(ACTION_INPUTS.token, {
 		required: true,
 	});
 
-	console.log("globalThis.inputs: ", {
-		...inputs,
-		token: ""
-	})
-
 	const registryResult = getValidatedInput(
-		"registry",
+		ACTION_INPUTS.registry,
 		z.union([
 			z.literal("vs-marketplace"),
 			z.literal("open-vsx"),
@@ -43,8 +38,8 @@ async function run() {
 
 	const registry = registryResult.data;
 
-	const debug = core.getBooleanInput("debug");
-	const dryRun = core.getBooleanInput("dry-run");
+	const debug = core.getBooleanInput(ACTION_INPUTS.debug);
+	const dryRun = core.getBooleanInput(ACTION_INPUTS["dry-run"]);
 
 	if (debug) {
 		core.warning("running with debug mode enabled");
@@ -54,17 +49,17 @@ async function run() {
 		core.warning("running with dry-run mode enabled");
 	}
 
-	const baseContentUrl = core.getInput("base-content-url", {
+	const baseContentUrl = core.getInput(ACTION_INPUTS["base-content-url"], {
 		trimWhitespace: true,
 	});
 
-	const baseImagesUrl = core.getInput("base-images-url", {
+	const baseImagesUrl = core.getInput(ACTION_INPUTS["base-images-url"], {
 		trimWhitespace: true,
 	});
 
-	const failSilently = core.getBooleanInput("fail-silently");
+	const failSilently = core.getBooleanInput(ACTION_INPUTS["fail-silently"]);
 
-	const extensionPath = core.getInput("extension-path", {
+	const extensionPath = core.getInput(ACTION_INPUTS["extension-path"], {
 		trimWhitespace: true,
 	});
 
@@ -83,14 +78,14 @@ async function run() {
 		return;
 	}
 
-	const rawTargets = core.getInput("targets");
+	const rawTargets = core.getInput(ACTION_INPUTS.targets);
 
 	const targets = rawTargets
 		.split(",")
 		.map((target) => target.trim())
 		.filter(Boolean);
 
-	const preRelease = core.getBooleanInput("pre-release");
+	const preRelease = core.getBooleanInput(ACTION_INPUTS["pre-release"]);
 
 	let extensionFile: string;
 	if (!isFile) {
