@@ -68,7 +68,7 @@ async function run() {
 		return;
 	}
 
-	const targets = core.getInput("targets");
+	const targets = core.getInput("target");
 
 	core.info(`targets: ${targets}`);
 
