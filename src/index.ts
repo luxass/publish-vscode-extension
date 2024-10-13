@@ -12,6 +12,9 @@ async function run() {
 		required: true,
 	});
 
+	// @ts-expect-error ashdh
+	console.log("globalThis.inputs: ", globalThis.inputs)
+
 	const registryResult = getValidatedInput(
 		"registry",
 		z.union([

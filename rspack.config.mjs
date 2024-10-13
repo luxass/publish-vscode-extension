@@ -46,7 +46,8 @@ export default {
 	},
 	plugins: [
 		actionsKit({
-			actionPath: "./action.yml"
+			actionPath: "./action.yml",
+			injectInputs: true
 		})
 	],
   externals: {
