@@ -7,13 +7,16 @@ import { publish as publishOVSX } from "ovsx";
 import { getValidatedInput } from "actions-kit";
 import { z } from "zod";
 
+
 async function run() {
-	const token = core.getInput("token", {
+	const token = core.getInput(inputs.token, {
 		required: true,
 	});
 
-	// @ts-expect-error ashdh
-	console.log("globalThis.inputs: ", globalThis.inputs)
+	console.log("globalThis.inputs: ", {
+		...inputs,
+		token: ""
+	})
 
 	const registryResult = getValidatedInput(
 		"registry",
