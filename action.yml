@@ -42,13 +42,21 @@ inputs:
     # possible values are npm, yarn, pnpm and auto.
     default: auto
 
-  failSilently:
+  fail-silently:
     description: Do not fail if the extension is already published.
     required: false
     default: "false"
 
   targets:
     description: "Target architecture(s) the extension should run on. (Comma separated list)"
+    required: false
+
+  base-content-url:
+    description: 'Prepend all relative links in README.md with this URL.'
+    required: false
+
+  base-images-url:
+    description: 'Prepend all relative image links in README.md with this URL.'
     required: false
 
 outputs:

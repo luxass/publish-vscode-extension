@@ -25,10 +25,20 @@ async function run() {
 		core.warning("running with dry-run mode enabled");
 	}
 
+	const baseContentUrl = core.getInput("baseContentUrl", {
+		trimWhitespace: true,
+	});
+
+	const baseImagesUrl = core.getInput("baseImagesUrl", {
+		trimWhitespace: true,
+	});
+
 	if (!URL.canParse(registry) && !Object.keys(REGISTRIES).includes(registry)) {
 		core.setFailed(`invalid registry used: ${registry}`);
 		return;
 	}
+
+	const failSilently = core.getBooleanInput("fail-silently");
 
 	const extensionPath = core.getInput("extensionPath", {
 		trimWhitespace: true,
@@ -76,7 +86,10 @@ async function run() {
 		const result = await publishVSCE(extensionFile, {
 			pat: token,
 			preRelease,
-			targets
+			targets,
+			baseContentUrl: baseContentUrl ?? undefined,
+			baseImagesUrl: baseImagesUrl ?? undefined,
+			skipDuplicate: failSilently
 		});
 
 		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
@@ -85,7 +98,10 @@ async function run() {
 			pat: token,
 			preRelease,
 			packagePath: [extensionFile],
-			targets
+			targets,
+			baseContentUrl: baseContentUrl ?? undefined,
+			baseImagesUrl: baseImagesUrl ?? undefined,
+			skipDuplicate: failSilently
 		});
 
 		for (const result of results) {
