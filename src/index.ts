@@ -1,5 +1,5 @@
 import * as core from "@actions/core";
-import { REGISTRIES, type Registry } from "./constants";
+import { REGISTRIES } from "./constants";
 import * as fs from "node:fs";
 import { createVsix } from "./vsix";
 import { publishVSIX as publishVSCE } from "@vscode/vsce";
