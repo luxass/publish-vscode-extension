@@ -4,15 +4,38 @@ import * as fs from "node:fs";
 import { createVsix } from "./vsix";
 import { publishVSIX as publishVSCE } from "@vscode/vsce";
 import { publish as publishOVSX } from "ovsx";
+import { getValidatedInput } from "actions-kit";
+import { z } from "zod";
 
 async function run() {
 	const token = core.getInput("token", {
 		required: true,
 	});
 
-	const registry = core.getInput("registry", {
-		trimWhitespace: true,
-	});
+	const registryResult = getValidatedInput(
+		"registry",
+		z.union([
+			z.literal("vs-marketplace"),
+			z.literal("open-vsx"),
+			// TODO: use URL.canParse to increase perf
+			z
+				.string()
+				.url()
+				.transform((val): string & {} => val),
+		]),
+		{
+			trimWhitespace: true,
+		},
+	);
+
+	if (!registryResult.success) {
+		core.setFailed(
+			"registry is not a valid value, must be one of: vs-marketplace, open-vsx or a valid URL",
+		);
+		return;
+	}
+
+	const registry = registryResult.data;
 
 	const debug = core.getBooleanInput("debug");
 	const dryRun = core.getBooleanInput("dry-run");
@@ -25,22 +48,17 @@ async function run() {
 		core.warning("running with dry-run mode enabled");
 	}
 
-	const baseContentUrl = core.getInput("baseContentUrl", {
+	const baseContentUrl = core.getInput("base-content-url", {
 		trimWhitespace: true,
 	});
 
-	const baseImagesUrl = core.getInput("baseImagesUrl", {
+	const baseImagesUrl = core.getInput("base-images-url", {
 		trimWhitespace: true,
 	});
-
-	if (!URL.canParse(registry) && !Object.keys(REGISTRIES).includes(registry)) {
-		core.setFailed(`invalid registry used: ${registry}`);
-		return;
-	}
 
 	const failSilently = core.getBooleanInput("fail-silently");
 
-	const extensionPath = core.getInput("extensionPath", {
+	const extensionPath = core.getInput("extension-path", {
 		trimWhitespace: true,
 	});
 
@@ -74,13 +92,15 @@ async function run() {
 	const preRelease = core.getBooleanInput("pre-release");
 	const rawTargets = core.getInput("targets");
 
-	const targets = rawTargets.split(",").map((target) => target.trim()).filter(Boolean);
+	const targets = rawTargets
+		.split(",")
+		.map((target) => target.trim())
+		.filter(Boolean);
 
 	if (dryRun) {
 		core.info("dry-run enabled, skipping publish");
 		return;
 	}
-
 
 	if (registry === "vs-marketplace") {
 		const result = await publishVSCE(extensionFile, {
@@ -89,7 +109,7 @@ async function run() {
 			targets,
 			baseContentUrl: baseContentUrl ?? undefined,
 			baseImagesUrl: baseImagesUrl ?? undefined,
-			skipDuplicate: failSilently
+			skipDuplicate: failSilently,
 		});
 
 		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
@@ -101,7 +121,7 @@ async function run() {
 			targets,
 			baseContentUrl: baseContentUrl ?? undefined,
 			baseImagesUrl: baseImagesUrl ?? undefined,
-			skipDuplicate: failSilently
+			skipDuplicate: failSilently,
 		});
 
 		for (const result of results) {

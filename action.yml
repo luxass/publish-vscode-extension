@@ -16,7 +16,7 @@ inputs:
     required: true
     default: vs-marketplace
 
-  extensionPath:
+  extension-path:
     description: Path to VSIX File or path the extension you want to publish.
     required: false
     default: "./"
