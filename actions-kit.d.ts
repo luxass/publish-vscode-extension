@@ -2,7 +2,7 @@
 import "@actions/core";
 
 declare module "@actions/core" {
-  export const inputs = {
+  declare const inputs = {
   "token": "token",
   "registry": "registry",
   "extension-path": "extension-path",
