@@ -1,5 +1,5 @@
 import * as core from "@actions/core";
-import { REGISTRIES } from "./constants";
+import { REGISTRIES, type Registry } from "./constants";
 import * as fs from "node:fs";
 import { createVsix } from "./vsix";
 import { publishVSIX as publishVSCE } from "@vscode/vsce";
@@ -9,9 +9,11 @@ async function run() {
 	const token = core.getInput("token", {
 		required: true,
 	});
+
 	const registry = core.getInput("registry", {
 		trimWhitespace: true,
 	});
+
 	const debug = core.getBooleanInput("debug");
 	const dryRun = core.getBooleanInput("dry-run");
 
@@ -23,10 +25,11 @@ async function run() {
 		core.warning("running with dry-run mode enabled");
 	}
 
-	if (!URL.canParse(registry) && !Object.keys(REGISTRIES).includes(registry)) {
+	if (!Object.keys(REGISTRIES).includes(registry)) {
 		core.setFailed(`invalid registry used: ${registry}`);
 		return;
 	}
+
 
 	const extensionPath = core.getInput("extensionPath", {
 		trimWhitespace: true,
@@ -73,11 +76,15 @@ async function run() {
 			preRelease,
 		});
 
-		core.info(`published to marketplace: ${JSON.stringify(result, null, 2)}`);
+		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
 	} else {
-		throw new Error("registry not supported");
-	}
+		const result = await publishOVSX({
+			pat: token,
+			preRelease,
+		})
 
+		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
+	}
 }
 
 run().catch((err) => {

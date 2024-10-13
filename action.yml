@@ -14,7 +14,6 @@ inputs:
   registry:
     description: The registry to publish to. (URL's are supported, but also the values 'open-vsx' and 'vs-marketplace' are supported.)
     required: true
-    # possible values are open-vsx and marketplace.
     default: vs-marketplace
 
   extensionPath:
