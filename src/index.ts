@@ -125,6 +125,7 @@ async function run() {
 		});
 
 		for (const result of results) {
+			core.info(`result is: ${JSON.stringify(result, null, 2)}`);
 			if (result.status === "rejected") {
 				throw result.reason;
 			}
