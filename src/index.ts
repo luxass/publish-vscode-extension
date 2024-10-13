@@ -108,7 +108,7 @@ async function run() {
 		const result = await publishVSCE(extensionFile, {
 			pat: token,
 			preRelease,
-			targets,
+			// targets,
 			baseContentUrl: baseContentUrl ?? undefined,
 			baseImagesUrl: baseImagesUrl ?? undefined,
 			skipDuplicate: failSilently,
@@ -120,7 +120,7 @@ async function run() {
 			pat: token,
 			preRelease,
 			packagePath: [extensionFile],
-			targets,
+			// targets,
 			baseContentUrl: baseContentUrl ?? undefined,
 			baseImagesUrl: baseImagesUrl ?? undefined,
 			skipDuplicate: failSilently,
