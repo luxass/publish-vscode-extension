@@ -1,4 +1,4 @@
-name: Publish VS Code Extension
+name: Publish Visual Studio Code Extension
 description: An action to publish Visual Studio Code Extension to Open VSX Registry or Visual Studio Marketplace
 
 author: luxass
