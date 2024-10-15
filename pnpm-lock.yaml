@@ -33,8 +33,8 @@ importers:
         specifier: ^14.1.0
         version: 14.1.0
       mime:
-        specifier: ^1.3.4
-        version: 1.6.0
+        specifier: ^4.0.0
+        version: 4.0.4
       npm-packlist:
         specifier: ^5.1.3
         version: 5.1.3
@@ -82,8 +82,8 @@ importers:
         specifier: ^12.2.3
         version: 12.2.3
       '@types/mime':
-        specifier: ^1
-        version: 1.3.5
+        specifier: ^4.0.0
+        version: 4.0.0
       '@types/node':
         specifier: ^20.14.10
         version: 20.16.11
@@ -617,6 +617,10 @@ packages:
 
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
+
+  '@types/mime@4.0.0':
+    resolution: {integrity: sha512-5eEkJZ/BLvTE3vXGKkWlyTSUVZuzj23Wj8PoyOq2lt5I3CYbiLBOPb3XmCW6QcuOibIUE6emHXHt9E/F/rCa6w==}
+    deprecated: This is a stub types definition. mime provides its own type definitions, so you do not need this installed.
 
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
@@ -1227,10 +1231,6 @@ packages:
   destroy@1.2.0:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
-
-  detect-libc@2.0.2:
-    resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
-    engines: {node: '>=8'}
 
   detect-libc@2.0.3:
     resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
@@ -1865,6 +1865,11 @@ packages:
   mime@1.6.0:
     resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
     engines: {node: '>=4'}
+    hasBin: true
+
+  mime@4.0.4:
+    resolution: {integrity: sha512-v8yqInVjhXyqP6+Kw4fV3ZzeMRqEW6FotRsKXjRS5VMTNIuXsdRoAvklpoRgSqXm6o9VNH4/C0mgedko9DdLsQ==}
+    engines: {node: '>=16'}
     hasBin: true
 
   mimic-fn@2.1.0:
@@ -3407,6 +3412,10 @@ snapshots:
 
   '@types/mime@1.3.5': {}
 
+  '@types/mime@4.0.0':
+    dependencies:
+      mime: 4.0.4
+
   '@types/node-forge@1.3.11':
     dependencies:
       '@types/node': 20.16.11
@@ -4094,9 +4103,6 @@ snapshots:
 
   destroy@1.2.0: {}
 
-  detect-libc@2.0.2:
-    optional: true
-
   detect-libc@2.0.3: {}
 
   detect-node@2.1.0: {}
@@ -4744,6 +4750,8 @@ snapshots:
 
   mime@1.6.0: {}
 
+  mime@4.0.4: {}
+
   mimic-fn@2.1.0: {}
 
   mimic-fn@3.1.0: {}
@@ -4971,7 +4979,7 @@ snapshots:
 
   prebuild-install@7.1.1:
     dependencies:
-      detect-libc: 2.0.2
+      detect-libc: 2.0.3
       expand-template: 2.0.3
       github-from-package: 0.0.0
       minimist: 1.2.8
