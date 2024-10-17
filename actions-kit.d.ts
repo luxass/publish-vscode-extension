@@ -35,4 +35,6 @@ declare module "@actions/core" {
   type ActionOutputName = "vsix" | "success";
 
   export function setOutput(name: ActionOutputName, value: any): void;
+
+
 }

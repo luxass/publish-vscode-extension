@@ -17,6 +17,7 @@ export default {
   resolve: {
     extensions: [".ts", ".js"],
   },
+  devtool: false,
   module: {
     rules: [
       {
