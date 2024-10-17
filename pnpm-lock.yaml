@@ -18,8 +18,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1
       actions-kit:
-        specifier: ^0.1.0-beta.3
-        version: 0.1.0-beta.3(@rspack/core@1.0.13)
+        specifier: ^0.1.0-beta.6
+        version: 0.1.0-beta.6
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -111,6 +111,9 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
+      unplugin-actions-kit:
+        specifier: ^0.1.0
+        version: 0.1.0(@actions/core@1.11.1)(@rspack/core@1.0.13)
 
 packages:
 
@@ -726,28 +729,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  actions-kit@0.1.0-beta.3:
-    resolution: {integrity: sha512-MyRlfLPIjZMJzql8SXQ6P2u023lMSnxnrTeK1wM5cHRRI/c5afMTk1TPyQmZ1kleqnc7sZLPIkC7+63GpAg2+Q==}
-    peerDependencies:
-      '@rspack/core': '>=1.0.0'
-      esbuild: '>=0.24.0'
-      rolldown: 0.12.1
-      rollup: '>=3'
-      vite: '>=3'
-      webpack: ^4 || ^5
-    peerDependenciesMeta:
-      '@rspack/core':
-        optional: true
-      esbuild:
-        optional: true
-      rolldown:
-        optional: true
-      rollup:
-        optional: true
-      vite:
-        optional: true
-      webpack:
-        optional: true
+  actions-kit@0.1.0-beta.6:
+    resolution: {integrity: sha512-CJc2pInrCFyeuQplQy1Oeosk2Meju2aEWULXbo03M+oGqUvQS6576mdli2jWU9tXi6ZhyMDKIgkh+GJ3DK5KRg==}
 
   agent-base@7.1.1:
     resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
@@ -2377,6 +2360,30 @@ packages:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
 
+  unplugin-actions-kit@0.1.0:
+    resolution: {integrity: sha512-q6r+iXv4zc+U6vVutAC+/WYGXDD1VJGDBxwWYVgHp8/u8v6rAi+yviJzb1ZjmqMNFyPn1YgQ5UKzeEra5ajcLw==}
+    peerDependencies:
+      '@actions/core': ^1.11.1
+      '@rspack/core': '>=1.0.0'
+      esbuild: '>=0.24.0'
+      rolldown: 0.12.1
+      rollup: '>=3'
+      vite: '>=3'
+      webpack: ^4 || ^5
+    peerDependenciesMeta:
+      '@rspack/core':
+        optional: true
+      esbuild:
+        optional: true
+      rolldown:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+
   unplugin@1.14.1:
     resolution: {integrity: sha512-lBlHbfSFPToDYp9pjXlUEFVxYLaue9f9T1HC+4OHlmj+HnMDdz9oZY+erXfoCe/5V/7gKUSY2jpXPb9S7f0f/w==}
     engines: {node: '>=14.0.0'}
@@ -3330,17 +3337,11 @@ snapshots:
 
   acorn@8.13.0: {}
 
-  actions-kit@0.1.0-beta.3(@rspack/core@1.0.13):
+  actions-kit@0.1.0-beta.6:
     dependencies:
       '@actions/core': 1.11.1
-      '@rollup/pluginutils': 5.1.2
       js-yaml: 4.1.0
-      unplugin: 1.14.1
       zod: 3.23.8
-    optionalDependencies:
-      '@rspack/core': 1.0.13
-    transitivePeerDependencies:
-      - webpack-sources
 
   agent-base@7.1.1:
     dependencies:
@@ -5017,6 +5018,18 @@ snapshots:
       crypto-random-string: 2.0.0
 
   unpipe@1.0.0: {}
+
+  unplugin-actions-kit@0.1.0(@actions/core@1.11.1)(@rspack/core@1.0.13):
+    dependencies:
+      '@actions/core': 1.11.1
+      '@rollup/pluginutils': 5.1.2
+      js-yaml: 4.1.0
+      unplugin: 1.14.1
+      zod: 3.23.8
+    optionalDependencies:
+      '@rspack/core': 1.0.13
+    transitivePeerDependencies:
+      - webpack-sources
 
   unplugin@1.14.1:
     dependencies:

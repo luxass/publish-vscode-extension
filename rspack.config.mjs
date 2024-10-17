@@ -1,5 +1,5 @@
 // @ts-check
-import actionsKit from "actions-kit/unplugin/rspack"
+import actionsKit from "unplugin-actions-kit/rspack"
 import { resolve } from "node:path";
 
 /** @type {import("@rspack/core").Configuration} */
