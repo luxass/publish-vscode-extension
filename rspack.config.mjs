@@ -42,9 +42,6 @@ export default {
 			}
 		},
 	},
-  optimization: {
-    minimize: false,
-  },
 	plugins: [
 		actionsKit({
 			actionPath: "./action.yml",
