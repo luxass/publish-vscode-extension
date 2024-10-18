@@ -5,7 +5,7 @@ import { publishVSIX as publishVSCE, createVSIX } from "@vscode/vsce";
 import { publish as publishOVSX } from "ovsx";
 import { getValidatedInput } from "actions-kit";
 import { z } from "zod";
-import { detect as detectPM } from 'package-manager-detector'
+import { detect as detectPM } from "package-manager-detector";
 import { getExtensionName } from "./utils";
 import { join } from "node:path";
 
@@ -88,10 +88,7 @@ async function run() {
 		.filter(Boolean);
 
 	const preRelease = core.getBooleanInput(ACTION_INPUTS["pre-release"]);
-	const pmResult = getValidatedInput(
-		"manager",
-		PM_SCHEMA.optional(),
-	);
+	const pmResult = getValidatedInput("manager", PM_SCHEMA.optional());
 
 	if (!pmResult.success) {
 		core.setFailed("manager is not a valid value, must be one of: npm, pnpm, yarn");
@@ -106,7 +103,7 @@ async function run() {
 
 		const detectedPM = await detectPM({
 			cwd: process.cwd(),
-		})
+		});
 
 		if (detectedPM == null) {
 			core.setFailed("could not detect package manager");
@@ -115,7 +112,9 @@ async function run() {
 
 		const detectedValidationResult = PM_SCHEMA.safeParse(detectedPM.name);
 		if (!detectedValidationResult.success) {
-			core.setFailed(`detected package manager is not supported, found ${detectedPM.name} but expected one of: npm, pnpm, yarn`);
+			core.setFailed(
+				`detected package manager is not supported, found ${detectedPM.name} but expected one of: npm, pnpm, yarn`,
+			);
 			return;
 		}
 
@@ -142,7 +141,7 @@ async function run() {
 				dependencies: false,
 				packagePath: extensionName,
 				cwd: process.cwd(),
-			})
+			});
 		} else if (manager === "yarn" || manager === "npm") {
 			createVSIX({
 				baseImagesUrl: baseImagesUrl ?? undefined,
@@ -152,7 +151,7 @@ async function run() {
 				useYarn: manager === "yarn",
 				packagePath: extensionName,
 				cwd: process.cwd(),
-			})
+			});
 		} else {
 			core.setFailed("package manager is not supported, must be one of: npm, pnpm, yarn");
 			return;

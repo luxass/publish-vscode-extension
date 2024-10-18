@@ -13,5 +13,5 @@
     "source.fixAll.biome": "explicit"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.tsserver.log": "verbose",
+  "typescript.tsserver.log": "verbose"
 }

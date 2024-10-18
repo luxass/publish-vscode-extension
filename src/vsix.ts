@@ -4,7 +4,13 @@ import { join } from "node:path";
 import packlist from "npm-packlist";
 import { versionBump } from "./vsce/version-bump";
 import type { Manifest } from "./vsce/manifest";
-import { createDefaultProcessors, processFiles, writeVsix, type IFile, type IPackageOptions } from "./vsce/package";
+import {
+	createDefaultProcessors,
+	processFiles,
+	writeVsix,
+	type IFile,
+	type IPackageOptions,
+} from "./vsce/package";
 
 export interface CreateVsixOptions {
 	dir: string;
