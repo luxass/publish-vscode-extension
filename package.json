@@ -43,6 +43,7 @@
     "mime": "^1.3.4",
     "npm-packlist": "^5.1.3",
     "ovsx": "^0.10.0",
+    "package-manager-detector": "^0.2.2",
     "parse-semver": "^1.1.1",
     "pathe": "^1.1.2",
     "read": "^2.1.0",

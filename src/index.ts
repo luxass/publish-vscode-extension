@@ -1,13 +1,15 @@
 /// <reference types="../actions-kit.d.ts" />
 import * as core from "@actions/core";
 import * as fs from "node:fs";
-import { createVsix } from "./vsix";
-import { publishVSIX as publishVSCE } from "@vscode/vsce";
+import { publishVSIX as publishVSCE, createVSIX } from "@vscode/vsce";
 import { publish as publishOVSX } from "ovsx";
 import { getValidatedInput } from "actions-kit";
 import { z } from "zod";
+import { detect as detectPM } from 'package-manager-detector'
+import { getExtensionName } from "./utils";
+import { join } from "node:path";
 
-
+const PM_SCHEMA = z.union([z.literal("npm"), z.literal("pnpm"), z.literal("yarn")]);
 async function run() {
 	const token = core.getInput(ACTION_INPUTS.token, {
 		required: true,
@@ -86,22 +88,78 @@ async function run() {
 		.filter(Boolean);
 
 	const preRelease = core.getBooleanInput(ACTION_INPUTS["pre-release"]);
+	const pmResult = getValidatedInput(
+		"manager",
+		PM_SCHEMA.optional(),
+	);
+
+	if (!pmResult.success) {
+		core.setFailed("manager is not a valid value, must be one of: npm, pnpm, yarn");
+		return;
+	}
+
+	let manager = pmResult.data;
+
+	if (manager == null) {
+		// detecting pm based on repository
+		core.info("package manager has not been provided, detecting based on repository");
+
+		const detectedPM = await detectPM({
+			cwd: process.cwd(),
+		})
+
+		if (detectedPM == null) {
+			core.setFailed("could not detect package manager");
+			return;
+		}
+
+		const detectedValidationResult = PM_SCHEMA.safeParse(detectedPM.name);
+		if (!detectedValidationResult.success) {
+			core.setFailed(`detected package manager is not supported, found ${detectedPM.name} but expected one of: npm, pnpm, yarn`);
+			return;
+		}
+
+		core.info(`detected package manager: ${detectedPM.name}`);
+		// @ts-ignore	TODO: fix this later
+		manager = detectedPM.name;
+	}
 
 	let extensionFile: string;
 	if (!isFile) {
-		const result = await createVsix(
-			{ dir: extensionPath, outfile: "extension.vsix", dry: dryRun },
-			{
-				target: targets.join(" "),
-				preRelease,
+		const extensionName = await getExtensionName(extensionPath);
+		if (manager === "pnpm") {
+			core.warning(
+				"pnpm is not supported natively in `@vscode/vsce`, learn more here: https://github.com/luxass/publish-vscode-extension#pnpm-support",
+			);
+			createVSIX({
 				baseImagesUrl: baseImagesUrl ?? undefined,
 				baseContentUrl: baseContentUrl ?? undefined,
-			},
-		);
+				preRelease,
+				target: targets.join(" "),
+				useYarn: false,
+				// pnpm is not supported natively in `@vscode/vsce`,
+				// so we need to set dependencies to false to avoid scanning node_modules
+				dependencies: false,
+				packagePath: extensionName,
+				cwd: process.cwd(),
+			})
+		} else if (manager === "yarn" || manager === "npm") {
+			createVSIX({
+				baseImagesUrl: baseImagesUrl ?? undefined,
+				baseContentUrl: baseContentUrl ?? undefined,
+				preRelease,
+				target: targets.join(" "),
+				useYarn: manager === "yarn",
+				packagePath: extensionName,
+				cwd: process.cwd(),
+			})
+		} else {
+			core.setFailed("package manager is not supported, must be one of: npm, pnpm, yarn");
+			return;
+		}
 
-		core.info(`created vsix at: ${JSON.stringify(result, null, 2)}`);
-
-		extensionFile = result.outfile;
+		extensionFile = join(extensionPath, extensionName);
+		core.info(`created vsix at: ${extensionFile}`);
 	} else {
 		extensionFile = extensionPath;
 		core.info("extension is already packaged, skipping.");
@@ -150,6 +208,6 @@ async function run() {
 
 run().catch((err) => {
 	console.error(err);
-	core.setOutput("success", false)
+	core.setOutput("success", false);
 	core.setFailed(err);
 });
