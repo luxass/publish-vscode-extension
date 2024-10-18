@@ -112,8 +112,8 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
       unplugin-actions-kit:
-        specifier: ^0.1.0
-        version: 0.1.0(@actions/core@1.11.1)(@rspack/core@1.0.13)
+        specifier: ^0.1.1
+        version: 0.1.1(@actions/core@1.11.1)(@rspack/core@1.0.13)
 
 packages:
 
@@ -2360,8 +2360,8 @@ packages:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
 
-  unplugin-actions-kit@0.1.0:
-    resolution: {integrity: sha512-q6r+iXv4zc+U6vVutAC+/WYGXDD1VJGDBxwWYVgHp8/u8v6rAi+yviJzb1ZjmqMNFyPn1YgQ5UKzeEra5ajcLw==}
+  unplugin-actions-kit@0.1.1:
+    resolution: {integrity: sha512-aatXuQzeYQD9Dcq+GQObG7sqRpgxwYRJV7iTerFGlHttrnsqh0CmvSMC1AKg2GLoJwDiK1hSjTc8kCMqES03dA==}
     peerDependencies:
       '@actions/core': ^1.11.1
       '@rspack/core': '>=1.0.0'
@@ -5019,7 +5019,7 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  unplugin-actions-kit@0.1.0(@actions/core@1.11.1)(@rspack/core@1.0.13):
+  unplugin-actions-kit@0.1.1(@actions/core@1.11.1)(@rspack/core@1.0.13):
     dependencies:
       '@actions/core': 1.11.1
       '@rollup/pluginutils': 5.1.2

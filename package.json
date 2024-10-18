@@ -68,6 +68,6 @@
     "@types/yauzl": "^2.10.0",
     "@types/yazl": "^2.4.2",
     "typescript": "^5.6.3",
-    "unplugin-actions-kit": "^0.1.0"
+    "unplugin-actions-kit": "^0.1.1"
   }
 }
