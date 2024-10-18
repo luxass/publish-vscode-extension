@@ -139,7 +139,7 @@ async function run() {
 				// pnpm is not supported natively in `@vscode/vsce`,
 				// so we need to set dependencies to false to avoid scanning node_modules
 				dependencies: false,
-				packagePath: extensionName,
+				packagePath: join(extensionPath, extensionName),
 				cwd: extensionPath,
 
 				// TODO: remove later
@@ -152,7 +152,7 @@ async function run() {
 				preRelease,
 				target: targets.join(" "),
 				useYarn: manager === "yarn",
-				packagePath: extensionName,
+				packagePath: join(extensionPath, extensionName),
 				cwd: extensionPath,
 
 				// TODO: remove later
