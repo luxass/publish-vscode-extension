@@ -141,6 +141,9 @@ async function run() {
 				dependencies: false,
 				packagePath: extensionName,
 				cwd: extensionPath,
+
+				// TODO: remove later
+				allowUnusedFilesPattern: true,
 			});
 		} else if (manager === "yarn" || manager === "npm") {
 			await createVSIX({
@@ -151,6 +154,9 @@ async function run() {
 				useYarn: manager === "yarn",
 				packagePath: extensionName,
 				cwd: extensionPath,
+
+				// TODO: remove later
+				allowUnusedFilesPattern: true,
 			});
 		} else {
 			core.setFailed("package manager is not supported, must be one of: npm, pnpm, yarn");
