@@ -94,8 +94,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       '@types/read':
-        specifier: ^0.0.29
-        version: 0.0.29
+        specifier: ^0.0.32
+        version: 0.0.32
       '@types/semver':
         specifier: ^7.5.4
         version: 7.5.8
@@ -619,8 +619,8 @@ packages:
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
 
-  '@types/read@0.0.29':
-    resolution: {integrity: sha512-TisW3O3OhpP8/ZwaiqV7kewh9gnoH7PfqHd4hkCM9ogiqWEagu43WXpHWqgPbltXhembYJDpYB3cVwUIOweHXg==}
+  '@types/read@0.0.32':
+    resolution: {integrity: sha512-BbcOjC8nPoAKYK500K4ckuAJgiSZKc+4SBc+Isnf7AP088RNvCTqFay69bnRG6oOYf3/Kba4DVMLFEUrgAlZtA==}
 
   '@types/retry@0.12.0':
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
@@ -3207,7 +3207,7 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
-  '@types/read@0.0.29': {}
+  '@types/read@0.0.32': {}
 
   '@types/retry@0.12.0': {}
 
