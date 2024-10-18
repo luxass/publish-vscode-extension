@@ -157,6 +157,14 @@ async function run() {
 			return;
 		}
 
+		// list files in process.cwd()
+
+		const cwdFiles = fs.readdirSync(process.cwd());
+		const extensionPathFiles = fs.readdirSync(extensionPath);
+
+		core.info(`cwd files: ${JSON.stringify(cwdFiles, null, 2)}`);
+		core.info(`extensionPath files: ${JSON.stringify(extensionPathFiles, null, 2)}`);
+
 		extensionFile = join(extensionPath, extensionName);
 		core.info(`created vsix at: ${extensionFile}`);
 	} else {
