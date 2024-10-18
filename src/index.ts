@@ -143,9 +143,13 @@ async function run() {
 
 		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(results, null, 2)}`);
 	}
+
+	core.setOutput("success", true);
+	core.setOutput("vsix", extensionFile);
 }
 
 run().catch((err) => {
 	console.error(err);
+	core.setOutput("success", false)
 	core.setFailed(err);
 });
