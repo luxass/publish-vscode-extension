@@ -6,7 +6,7 @@ import { publish as publishOVSX } from "ovsx";
 import { getValidatedInput } from "actions-kit";
 import { z } from "zod";
 import { detect as detectPM } from "package-manager-detector";
-import { getExtensionName } from "./utils";
+import { getManifest } from "./utils";
 import { join } from "node:path";
 
 const PM_SCHEMA = z.union([z.literal("npm"), z.literal("pnpm"), z.literal("yarn")]);
@@ -125,7 +125,8 @@ async function run() {
 
 	let extensionFile: string;
 	if (!isFile) {
-		const extensionName = await getExtensionName(extensionPath);
+		const manifest = await getManifest(extensionPath);
+		const extensionName = `${manifest.name}-${manifest.version}.vsix`;
 		if (manager === "pnpm") {
 			core.warning(
 				"pnpm is not supported natively in `@vscode/vsce`, learn more here: https://github.com/luxass/publish-vscode-extension#pnpm-support",
@@ -134,6 +135,7 @@ async function run() {
 				baseImagesUrl: baseImagesUrl ?? undefined,
 				baseContentUrl: baseContentUrl ?? undefined,
 				preRelease,
+				version: manifest.version,
 				target: targets.join(" "),
 				useYarn: false,
 				// pnpm is not supported natively in `@vscode/vsce`,
@@ -150,6 +152,7 @@ async function run() {
 				baseImagesUrl: baseImagesUrl ?? undefined,
 				baseContentUrl: baseContentUrl ?? undefined,
 				preRelease,
+				version: manifest.version,
 				target: targets.join(" "),
 				useYarn: manager === "yarn",
 				packagePath: join(extensionPath, extensionName),
