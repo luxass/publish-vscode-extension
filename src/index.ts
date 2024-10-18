@@ -130,7 +130,7 @@ async function run() {
 			core.warning(
 				"pnpm is not supported natively in `@vscode/vsce`, learn more here: https://github.com/luxass/publish-vscode-extension#pnpm-support",
 			);
-			createVSIX({
+			await createVSIX({
 				baseImagesUrl: baseImagesUrl ?? undefined,
 				baseContentUrl: baseContentUrl ?? undefined,
 				preRelease,
@@ -143,7 +143,7 @@ async function run() {
 				cwd: extensionPath,
 			});
 		} else if (manager === "yarn" || manager === "npm") {
-			createVSIX({
+			await createVSIX({
 				baseImagesUrl: baseImagesUrl ?? undefined,
 				baseContentUrl: baseContentUrl ?? undefined,
 				preRelease,
