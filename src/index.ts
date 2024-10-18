@@ -140,7 +140,7 @@ async function run() {
 				// so we need to set dependencies to false to avoid scanning node_modules
 				dependencies: false,
 				packagePath: extensionName,
-				cwd: process.cwd(),
+				cwd: extensionPath,
 			});
 		} else if (manager === "yarn" || manager === "npm") {
 			createVSIX({
@@ -150,7 +150,7 @@ async function run() {
 				target: targets.join(" "),
 				useYarn: manager === "yarn",
 				packagePath: extensionName,
-				cwd: process.cwd(),
+				cwd: extensionPath,
 			});
 		} else {
 			core.setFailed("package manager is not supported, must be one of: npm, pnpm, yarn");
