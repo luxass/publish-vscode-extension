@@ -9,7 +9,17 @@ import { detect as detectPM } from "package-manager-detector";
 import { getManifest } from "./utils";
 import { join } from "node:path";
 
-const PM_SCHEMA = z.union([z.literal("npm"), z.literal("pnpm"), z.literal("yarn")]).optional();
+const PM_SCHEMA = z.union([
+    z.literal("npm"),
+    z.literal("pnpm"),
+    z.literal("yarn"),
+    z.literal("").transform((val) => (val === "" ? null : val)).refine((val) => val === null, {
+        message: "invalid value",
+    }),
+]);
+
+
+type A = z.infer<typeof PM_SCHEMA>;
 
 async function run() {
 	const token = core.getInput(ACTION_INPUTS.token, {
