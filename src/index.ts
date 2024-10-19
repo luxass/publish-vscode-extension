@@ -3,7 +3,7 @@ import * as core from "@actions/core";
 import * as fs from "node:fs";
 import { publishVSIX as publishVSCE, createVSIX } from "@vscode/vsce";
 import { publish as publishOVSX } from "ovsx";
-import { getValidatedInput } from "actions-kit";
+import { getSafeValidatedInput } from "actions-kit";
 import { z } from "zod";
 import { detect as detectPM } from "package-manager-detector";
 import { getManifest } from "./utils";
@@ -26,7 +26,7 @@ async function run() {
 		required: true,
 	});
 
-	const registryResult = getValidatedInput(
+	const registryResult = getSafeValidatedInput(
 		ACTION_INPUTS.registry,
 		z.union([
 			z.literal("vs-marketplace"),
@@ -99,7 +99,7 @@ async function run() {
 		.filter(Boolean);
 
 	const preRelease = core.getBooleanInput(ACTION_INPUTS["pre-release"]);
-	const pmResult = getValidatedInput("manager", PM_SCHEMA);
+	const pmResult = getSafeValidatedInput("manager", PM_SCHEMA);
 
 	if (!pmResult.success) {
 		core.setFailed("manager is not a valid value, must be one of: npm, pnpm, yarn");
