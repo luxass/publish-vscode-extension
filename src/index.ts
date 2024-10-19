@@ -139,7 +139,7 @@ async function run() {
 		const manifest = await getManifest(extensionPath);
 		const extensionName = `${manifest.name}-${manifest.version}.vsix`;
 		core.info(`packaging extension: ${extensionName}`);
-		core.info(`manifest: ${JSON.stringify(manifest, null, 2)}`);
+		core.debug(`manifest: ${JSON.stringify(manifest, null, 2)}`);
 		if (manager === "pnpm") {
 			core.warning(
 				"pnpm is not supported natively in `@vscode/vsce`, learn more here: https://github.com/luxass/publish-vscode-extension#pnpm-support",
