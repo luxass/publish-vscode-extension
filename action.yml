@@ -37,10 +37,8 @@ inputs:
     default: "false"
 
   manager:
-    description: "The package manager to use. (We automatically detect the package manager if you don't specify it)"
+    description: "The package manager to use. (we automatically detect the package manager if you don't specify it)"
     required: false
-    # possible values are npm, yarn, pnpm and auto.
-    default: auto
 
   fail-silently:
     description: Do not fail if the extension is already published.
