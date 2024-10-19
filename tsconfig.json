@@ -14,11 +14,6 @@
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
-    "plugins": [
-      {
-        "name": "actions-kit-ts-plugin"
-      }
-    ]
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
