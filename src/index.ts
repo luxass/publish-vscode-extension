@@ -9,7 +9,8 @@ import { detect as detectPM } from "package-manager-detector";
 import { getManifest } from "./utils";
 import { join } from "node:path";
 
-const PM_SCHEMA = z.union([z.literal("npm"), z.literal("pnpm"), z.literal("yarn")]);
+const PM_SCHEMA = z.union([z.literal("npm"), z.literal("pnpm"), z.literal("yarn")]).optional();
+
 async function run() {
 	const token = core.getInput(ACTION_INPUTS.token, {
 		required: true,
@@ -88,7 +89,7 @@ async function run() {
 		.filter(Boolean);
 
 	const preRelease = core.getBooleanInput(ACTION_INPUTS["pre-release"]);
-	const pmResult = getValidatedInput("manager", PM_SCHEMA.optional());
+	const pmResult = getValidatedInput("manager", PM_SCHEMA);
 
 	if (!pmResult.success) {
 		core.setFailed("manager is not a valid value, must be one of: npm, pnpm, yarn");
