@@ -1,68 +1,64 @@
 name: Publish Visual Studio Code Extension
-description: An action to publish Visual Studio Code Extension to Open VSX Registry or Visual Studio Marketplace
-
+description: >-
+  An action to publish Visual Studio Code Extension to Open VSX Registry or
+  Visual Studio Marketplace
 author: luxass
 branding:
   color: purple
   icon: package
-
 inputs:
   token:
-    description: The token to use for authentication.
     required: true
-
+    description: The token to use for authentication.
   registry:
-    description: The registry to publish to. (URL's are supported, but also the values 'open-vsx' and 'vs-marketplace' are supported.)
     required: true
     default: vs-marketplace
-
+    description: >-
+      The registry to publish to. (URL's are supported, but also the values
+      'open-vsx' and 'vs-marketplace' are supported.)
   extension-path:
+    required: false
+    default: ./
     description: Path to VSIX File or path the extension you want to publish.
-    required: false
-    default: "./"
-
   debug:
-    description: "Show debug information. (This is not the same as enabling debug logging for the workflow rerun)"
     required: false
-    default: "false"
-
+    default: 'false'
+    description: >-
+      Show debug information. (This is not the same as enabling debug logging
+      for the workflow rerun)
   dry-run:
-    description: "Do not publish the extension, but show the information that would be sent to the registry."
     required: false
-    default: "false"
-
+    default: 'false'
+    description: >-
+      Do not publish the extension, but show the information that would be sent
+      to the registry.
   pre-release:
+    required: false
+    default: 'false'
     description: Mark the extension as pre-release extension.
-    required: false
-    default: "false"
-
   manager:
-    description: "The package manager to use. (we automatically detect the package manager if you don't specify it)"
     required: false
-
+    description: >-
+      The package manager to use. (we automatically detect the package manager
+      if you don't specify it)
   fail-silently:
+    required: false
+    default: 'false'
     description: Do not fail if the extension is already published.
-    required: false
-    default: "false"
-
   targets:
-    description: "Target architecture(s) the extension should run on. (Comma separated list)"
     required: false
-
+    description: Target architecture(s) the extension should run on. (Comma separated list)
   base-content-url:
-    description: 'Prepend all relative links in README.md with this URL.'
     required: false
-
+    description: Prepend all relative links in README.md with this URL.
   base-images-url:
-    description: 'Prepend all relative image links in README.md with this URL.'
     required: false
-
+    description: Prepend all relative image links in README.md with this URL.
 outputs:
   vsix:
     description: The path to the VSIX file.
   success:
     description: Whether the action was successful.
-
 runs:
   using: node20
   main: dist/index.cjs
