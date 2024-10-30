@@ -13,7 +13,7 @@ importers:
         version: 1.11.1
       '@vscode/vsce':
         specifier: ^3.2.0
-        version: 3.2.0
+        version: 3.2.1
       actions-kit:
         specifier: ^0.1.0
         version: 0.1.0
@@ -60,10 +60,6 @@ packages:
   '@actions/io@1.1.3':
     resolution: {integrity: sha512-wi9JjgKLYS7U/z8PPbco+PvTb/nRWjeoFlJ1Qer83k/3C5PHQi28hiVdeE2kHXmIL99mQFawx8qt/JPjZilJ8Q==}
 
-  '@azure/abort-controller@1.1.0':
-    resolution: {integrity: sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==}
-    engines: {node: '>=12.0.0'}
-
   '@azure/abort-controller@2.1.2':
     resolution: {integrity: sha512-nBrLsEWm4J2u5LpAPjxADTlq3trDgVZZXHNKabeXZtpq3d3AbN/KGO82R87rdDz5/lYB024rtEf10/q0urNgsA==}
     engines: {node: '>=18.0.0'}
@@ -88,8 +84,8 @@ packages:
     resolution: {integrity: sha512-DxOSLua+NdpWoSqULhjDyAZTXFdP/LKkqtYuxxz1SCN289zk3OG8UOpnCQAz/tygyACBtWp/BoO72ptK7msY8g==}
     engines: {node: '>=18.0.0'}
 
-  '@azure/identity@4.4.1':
-    resolution: {integrity: sha512-DwnG4cKFEM7S3T+9u05NstXU/HN0dk45kPOinUyNKsn5VWwpXd9sbPKEg6kgJzGbm1lMuhx9o31PVbCtM5sfBA==}
+  '@azure/identity@4.5.0':
+    resolution: {integrity: sha512-EknvVmtBuSIic47xkOqyNabAme0RYTw52BTMz8eBgU1ysTyMrD1uOoM+JdS0J/4Yfp98IBT3osqq3BfwSaNaGQ==}
     engines: {node: '>=18.0.0'}
 
   '@azure/logger@1.1.4':
@@ -408,11 +404,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@vscode/vsce-sign@2.0.4':
-    resolution: {integrity: sha512-0uL32egStKYfy60IqnynAChMTbL0oqpqk0Ew0YHiIb+fayuGZWADuIPHWUcY1GCnAA+VgchOPDMxnc2R3XGWEA==}
+  '@vscode/vsce-sign@2.0.5':
+    resolution: {integrity: sha512-GfYWrsT/vypTMDMgWDm75iDmAOMe7F71sZECJ+Ws6/xyIfmB3ELVnVN+LwMFAvmXY+e6eWhR2EzNGF/zAhWY3Q==}
 
-  '@vscode/vsce@3.2.0':
-    resolution: {integrity: sha512-c/AId5Lp50HTszCBDfXfD/Go2djm6qO/WfedP2Y3BpRP+V+ttr8T0mTvZ8WEyTiBp2EfrYnzYUCx0ocB9mHy4Q==}
+  '@vscode/vsce@3.2.1':
+    resolution: {integrity: sha512-AY9vBjwExakK1c0cI/3NN2Ey0EgiKLBye/fxl/ue+o4q6RZ7N+xzd1jAD6eI6eBeMVANi617+V2rxIAkDPco2Q==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -1381,8 +1377,8 @@ packages:
   parse5-parser-stream@7.1.2:
     resolution: {integrity: sha512-JyeQc9iwFLn5TbvvqACIF/VXG6abODeB3Fwmv/TGdLk2LfbWkaySGY72at4+Ty7EkPZj854u4CrICqNk2qIbow==}
 
-  parse5@7.2.0:
-    resolution: {integrity: sha512-ZkDsAOcxsUMZ4Lz5fVciOehNcJ+Gb8gTzcA4yl3wnc273BAybYWrQ+Ks/OjCjSEpjvQkDSeZbybK9qj2VHHdGA==}
+  parse5@7.2.1:
+    resolution: {integrity: sha512-BuBYQYlv1ckiPdQi/ohiivi9Sagc9JG+Ozs0r7b/0iK3sKmrb0b9FdWdBbOdx6hBCM/F9Ir82ofnBhtZOjCRPQ==}
 
   parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
@@ -1922,10 +1918,6 @@ snapshots:
 
   '@actions/io@1.1.3': {}
 
-  '@azure/abort-controller@1.1.0':
-    dependencies:
-      tslib: 2.8.0
-
   '@azure/abort-controller@2.1.2':
     dependencies:
       tslib: 2.8.0
@@ -1970,9 +1962,9 @@ snapshots:
       '@azure/abort-controller': 2.1.2
       tslib: 2.8.0
 
-  '@azure/identity@4.4.1':
+  '@azure/identity@4.5.0':
     dependencies:
-      '@azure/abort-controller': 1.1.0
+      '@azure/abort-controller': 2.1.2
       '@azure/core-auth': 1.9.0
       '@azure/core-client': 1.9.2
       '@azure/core-rest-pipeline': 1.17.0
@@ -2305,7 +2297,7 @@ snapshots:
   '@vscode/vsce-sign-win32-x64@2.0.2':
     optional: true
 
-  '@vscode/vsce-sign@2.0.4':
+  '@vscode/vsce-sign@2.0.5':
     optionalDependencies:
       '@vscode/vsce-sign-alpine-arm64': 2.0.2
       '@vscode/vsce-sign-alpine-x64': 2.0.2
@@ -2317,10 +2309,10 @@ snapshots:
       '@vscode/vsce-sign-win32-arm64': 2.0.2
       '@vscode/vsce-sign-win32-x64': 2.0.2
 
-  '@vscode/vsce@3.2.0':
+  '@vscode/vsce@3.2.1':
     dependencies:
-      '@azure/identity': 4.4.1
-      '@vscode/vsce-sign': 2.0.4
+      '@azure/identity': 4.5.0
+      '@vscode/vsce-sign': 2.0.5
       azure-devops-node-api: 12.5.0
       chalk: 2.4.2
       cheerio: 1.0.0
@@ -2528,7 +2520,7 @@ snapshots:
       domutils: 3.1.0
       encoding-sniffer: 0.2.0
       htmlparser2: 9.1.0
-      parse5: 7.2.0
+      parse5: 7.2.1
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
       undici: 6.20.1
@@ -3307,7 +3299,7 @@ snapshots:
 
   ovsx@0.10.0:
     dependencies:
-      '@vscode/vsce': 3.2.0
+      '@vscode/vsce': 3.2.1
       commander: 6.2.1
       follow-redirects: 1.15.9
       is-ci: 2.0.0
@@ -3341,13 +3333,13 @@ snapshots:
   parse5-htmlparser2-tree-adapter@7.1.0:
     dependencies:
       domhandler: 5.0.3
-      parse5: 7.2.0
+      parse5: 7.2.1
 
   parse5-parser-stream@7.1.2:
     dependencies:
-      parse5: 7.2.0
+      parse5: 7.2.1
 
-  parse5@7.2.0:
+  parse5@7.2.1:
     dependencies:
       entities: 4.5.0
 
