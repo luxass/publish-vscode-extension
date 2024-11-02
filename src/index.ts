@@ -1,25 +1,26 @@
 /// <reference types="../actions-kit.d.ts" />
+
 import * as core from "@actions/core";
 import * as fs from "node:fs";
 import { publishVSIX as publishVSCE, createVSIX } from "@vscode/vsce";
 import { publish as publishOVSX } from "ovsx";
-import { getSafeValidatedInput } from "actions-kit";
+import { getSafeValidatedInput } from "actions-kit/utils";
 import { z } from "zod";
 import { detect as detectPM } from "package-manager-detector";
 import { getManifest } from "./utils";
 import { join } from "node:path";
 
 const PM_SCHEMA = z.union([
-    z.literal("npm"),
-    z.literal("pnpm"),
-    z.literal("yarn"),
-    z.literal("").transform((val) => (val === "" ? null : val)).refine((val) => val === null, {
-        message: "invalid value",
-    }),
+	z.literal("npm"),
+	z.literal("pnpm"),
+	z.literal("yarn"),
+	z
+		.literal("")
+		.transform((val) => (val === "" ? null : val))
+		.refine((val) => val === null, {
+			message: "invalid value",
+		}),
 ]);
-
-
-type A = z.infer<typeof PM_SCHEMA>;
 
 async function run() {
 	const token = core.getInput(ACTION_INPUTS.token, {
