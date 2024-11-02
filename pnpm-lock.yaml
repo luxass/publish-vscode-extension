@@ -15,8 +15,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       actions-kit:
-        specifier: ^0.2.6
-        version: 0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14)
+        specifier: ^0.2.7
+        version: 0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)
       ovsx:
         specifier: ^0.10.0
         version: 0.10.0
@@ -28,8 +28,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@actions-sdk/rspack-builder':
-        specifier: ^0.2.5
-        version: 0.2.5(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14))
+        specifier: ^0.2.6
+        version: 0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14))
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -48,11 +48,11 @@ packages:
   '@actions-sdk/action-utils@0.3.0':
     resolution: {integrity: sha512-3xEckmr2C5Vkfcx/Ax3VjACz8XUximquL86MXMTGsIa/G2+e3DUkfbhZHLh3QJBBtHn1o3VZOfm5LtVyAucj2g==}
 
-  '@actions-sdk/rspack-builder@0.2.5':
-    resolution: {integrity: sha512-tEDao4zjgKPtqdmuTaX+GbueyYKGhNXwft+apoLe/GxPK9m+JMh14XEUMZMbg2kpASwcgkID499r5ykMr9I8hA==}
+  '@actions-sdk/rspack-builder@0.2.6':
+    resolution: {integrity: sha512-agWWgkpfxQVH8zXB9K7E4j/fUnsDbyrJ/tLvf7z7Uf+kRh4sKkyaXosisXDONnBW9sNl+BrY1q4tfgYSqDmYLw==}
     peerDependencies:
       '@rspack/core': ^1.0.13
-      actions-kit: 0.2.6
+      actions-kit: 0.2.7
 
   '@actions/core@1.11.1':
     resolution: {integrity: sha512-hXJCSrkwfA46Vd9Z3q4cpEpHB1rL5NG04+/rbqW9d3+CSvtB1tYe8UTpAlixa1vj0m/ULglfEK2UKxMGxCxv5A==}
@@ -317,8 +317,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  actions-kit@0.2.6:
-    resolution: {integrity: sha512-1CAbW7pHNio/stiCYlYW4A0tnD/RREI+x7lOdpzlbqZjyOchBoq10j27sRGyamIS13UeuzXowDDpa+AAHYHxwA==}
+  actions-kit@0.2.7:
+    resolution: {integrity: sha512-Pt8fqQDxnWu++t77iVatYeokUrvX3kphJZwIQlI+HhAWFakAKR0cexogfp/k+XQnTZtJF1elaWpthJqUm9VIoQ==}
     hasBin: true
 
   agent-base@7.1.1:
@@ -578,6 +578,9 @@ packages:
   expand-template@2.0.3:
     resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
     engines: {node: '>=6'}
+
+  farver@0.2.0:
+    resolution: {integrity: sha512-wSp897H2iZQ7BeYi+RaaIr0DuPq/drPtIppR7f792yPwwzXFSBBVwO2Pit3qmGFFpMqNSU5WVTcFsC2Oss5cNw==}
 
   fd-slicer@1.1.0:
     resolution: {integrity: sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==}
@@ -1070,6 +1073,9 @@ packages:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
 
+  termenv@0.1.1:
+    resolution: {integrity: sha512-h6xnl05KazBKkDa++8PZrJ8q22qTCmZlgOSFP8Z80a91D1kVCyN0AuFt+XcH/uNv/ml02puswj6SHTLC3Y/CTg==}
+
   tmp@0.2.3:
     resolution: {integrity: sha512-nZD7m9iCPC5g0pYmcaxogYKggSfLsdxl8of3Q/oIbqCqLLIO9IAF0GWjX1z9NZRHPiXv8Wex4yDCaZsgEw0Y8w==}
     engines: {node: '>=14.14'}
@@ -1217,10 +1223,10 @@ snapshots:
       '@actions/core': 1.11.1
       zod: 3.23.8
 
-  '@actions-sdk/rspack-builder@0.2.5(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14))':
+  '@actions-sdk/rspack-builder@0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14))':
     dependencies:
       '@rspack/core': 1.0.14
-      actions-kit: 0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14)
+      actions-kit: 0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)
       defu: 6.1.4
       unplugin-actions-kit: 0.2.3(@actions/core@1.11.1)(@rspack/core@1.0.14)
       zod: 3.23.8
@@ -1522,7 +1528,7 @@ snapshots:
 
   acorn@8.13.0: {}
 
-  actions-kit@0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14):
+  actions-kit@0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14):
     dependencies:
       '@actions-sdk/action-schema': 0.2.1
       '@actions-sdk/action-utils': 0.3.0
@@ -1530,6 +1536,7 @@ snapshots:
       cac: 6.7.14
       consola: 3.2.3
       defu: 6.1.4
+      farver: 0.2.0
       js-yaml: 4.1.0
       unplugin-actions-kit: 0.2.3(@actions/core@1.11.1)(@rspack/core@1.0.14)
       zod: 3.23.8
@@ -1816,6 +1823,10 @@ snapshots:
 
   expand-template@2.0.3:
     optional: true
+
+  farver@0.2.0:
+    dependencies:
+      termenv: 0.1.1
 
   fd-slicer@1.1.0:
     dependencies:
@@ -2361,6 +2372,8 @@ snapshots:
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
+
+  termenv@0.1.1: {}
 
   tmp@0.2.3: {}
 
