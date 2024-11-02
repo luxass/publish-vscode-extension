@@ -61,4 +61,4 @@ outputs:
     description: Whether the action was successful.
 runs:
   using: node20
-  main: dist/index.cjs
+  main: dist/index.mjs

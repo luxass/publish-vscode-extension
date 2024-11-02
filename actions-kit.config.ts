@@ -1,5 +1,5 @@
 import { defineConfig } from "actions-kit/config";
-import rspack from "@actions-sdk/rspack-builder";
+import rolldown from "@actions-sdk/rolldown-builder";
 
 export default defineConfig({
 	writeYaml: true,
@@ -78,12 +78,12 @@ export default defineConfig({
 		},
 		runs: {
 			using: "node20",
-			main: "dist/index.cjs",
+			main: "dist/index.mjs",
 		},
 	},
-	builder: rspack({
-    externals: {
-      keytar: "commonjs keytar",
-    },
+	builder: rolldown({
+		external: [
+			"keytar"
+		]
   }),
 });
