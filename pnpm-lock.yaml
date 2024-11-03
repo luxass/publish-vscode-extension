@@ -15,8 +15,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       actions-kit:
-        specifier: ^0.2.7
-        version: 0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
+        specifier: ^0.2.8
+        version: 0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
       ovsx:
         specifier: ^0.10.0
         version: 0.10.0
@@ -28,8 +28,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@actions-sdk/rolldown-builder':
-        specifier: ^0.2.6
-        version: 0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2))(rolldown@0.13.2)
+        specifier: ^0.2.7
+        version: 0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2))(rolldown@0.13.2)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -48,13 +48,13 @@ packages:
   '@actions-sdk/action-schema@0.2.1':
     resolution: {integrity: sha512-+4joE7MImBWaD57AIW2Ra/4bL5lNsfYCQo4CW6xwzvei+afaPra4qggd6c0EwllkKIGssL6i+GPC6SwGAdPVcg==}
 
-  '@actions-sdk/action-utils@0.3.0':
-    resolution: {integrity: sha512-3xEckmr2C5Vkfcx/Ax3VjACz8XUximquL86MXMTGsIa/G2+e3DUkfbhZHLh3QJBBtHn1o3VZOfm5LtVyAucj2g==}
+  '@actions-sdk/action-utils@0.4.0':
+    resolution: {integrity: sha512-Dw3YxX+K9SQ20hhWYI0yqVMmnD4U1C+KUorlvKpwf4iLeSixmq5S0ghLuAGZVRLK176vmwWVIP1wyDoCskd3wA==}
 
-  '@actions-sdk/rolldown-builder@0.2.6':
-    resolution: {integrity: sha512-CZUX+bwCs/nZ1cDF4/0bmLMLIQDvhidecEiaYE2MLpk8I2KPVP4uEZ4dp1CPNfLaqbuZ63h3QJRGaW7tfaA7rQ==}
+  '@actions-sdk/rolldown-builder@0.2.7':
+    resolution: {integrity: sha512-v/acpiC+oIvbRNpxw6J8gypo81CRrECY+lyM0Qr2gsNd6zS2MS4oi0JteswUMbRHzGt1imC+d5cgkjFr4x6hUQ==}
     peerDependencies:
-      actions-kit: 0.2.7
+      actions-kit: 0.2.8
       rolldown: ^0.13.2
 
   '@actions/core@1.11.1':
@@ -395,8 +395,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  actions-kit@0.2.7:
-    resolution: {integrity: sha512-Pt8fqQDxnWu++t77iVatYeokUrvX3kphJZwIQlI+HhAWFakAKR0cexogfp/k+XQnTZtJF1elaWpthJqUm9VIoQ==}
+  actions-kit@0.2.8:
+    resolution: {integrity: sha512-nKDYHeEJA9T8rTxb2ydqZ89WlpxpUH6yPg7AhzWd2KYZClIQZoDwpI8D+ruTIqrUJKYHTKVUgzRBfg3WytaH7A==}
     hasBin: true
 
   agent-base@7.1.1:
@@ -1300,14 +1300,13 @@ snapshots:
     dependencies:
       zod: 3.23.8
 
-  '@actions-sdk/action-utils@0.3.0':
+  '@actions-sdk/action-utils@0.4.0':
     dependencies:
       '@actions/core': 1.11.1
-      zod: 3.23.8
 
-  '@actions-sdk/rolldown-builder@0.2.6(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2))(rolldown@0.13.2)':
+  '@actions-sdk/rolldown-builder@0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2))(rolldown@0.13.2)':
     dependencies:
-      actions-kit: 0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
+      actions-kit: 0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
       defu: 6.1.4
       rolldown: 0.13.2
       unplugin-actions-kit: 0.2.3(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
@@ -1682,10 +1681,10 @@ snapshots:
 
   acorn@8.14.0: {}
 
-  actions-kit@0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2):
+  actions-kit@0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2):
     dependencies:
       '@actions-sdk/action-schema': 0.2.1
-      '@actions-sdk/action-utils': 0.3.0
+      '@actions-sdk/action-utils': 0.4.0
       c12: 2.0.1
       cac: 6.7.14
       consola: 3.2.3

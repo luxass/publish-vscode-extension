@@ -34,13 +34,13 @@
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@vscode/vsce": "^3.2.1",
-    "actions-kit": "^0.2.7",
+    "actions-kit": "^0.2.8",
     "ovsx": "^0.10.0",
     "package-manager-detector": "^0.2.2",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@actions-sdk/rolldown-builder": "^0.2.6",
+    "@actions-sdk/rolldown-builder": "^0.2.7",
     "@biomejs/biome": "1.9.4",
     "@types/node": "^20.17.5",
     "rolldown": "^0.13.2",

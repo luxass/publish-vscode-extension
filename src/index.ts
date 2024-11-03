@@ -2,13 +2,23 @@
 
 import * as core from "@actions/core";
 import * as fs from "node:fs";
-import { publishVSIX as publishVSCE, createVSIX } from "@vscode/vsce";
+import { createVSIX, publishVSIX as publishVSCE } from "@vscode/vsce";
 import { publish as publishOVSX } from "ovsx";
-import { getSafeValidatedInput } from "actions-kit/utils";
+import { getValidatedInput } from "actions-kit/utils";
 import { z } from "zod";
 import { detect as detectPM } from "package-manager-detector";
 import { getManifest } from "./utils";
 import { join } from "node:path";
+
+const REGISTRY_URL_SCHEMA = z.union([
+	z.literal("vs-marketplace"),
+	z.literal("open-vsx"),
+	// TODO: use URL.canParse to increase perf
+	z
+		.string()
+		.url()
+		.transform((val): string & {} => val),
+]);
 
 const PM_SCHEMA = z.union([
 	z.literal("npm"),
@@ -27,17 +37,9 @@ async function run() {
 		required: true,
 	});
 
-	const registryResult = getSafeValidatedInput(
+	const registryResult = getValidatedInput(
 		ACTION_INPUTS.registry,
-		z.union([
-			z.literal("vs-marketplace"),
-			z.literal("open-vsx"),
-			// TODO: use URL.canParse to increase perf
-			z
-				.string()
-				.url()
-				.transform((val): string & {} => val),
-		]),
+		REGISTRY_URL_SCHEMA.safeParse,
 		{
 			trimWhitespace: true,
 		},
@@ -100,10 +102,12 @@ async function run() {
 		.filter(Boolean);
 
 	const preRelease = core.getBooleanInput(ACTION_INPUTS["pre-release"]);
-	const pmResult = getSafeValidatedInput("manager", PM_SCHEMA);
+	const pmResult = getValidatedInput("manager", PM_SCHEMA.safeParse);
 
 	if (!pmResult.success) {
-		core.setFailed("manager is not a valid value, must be one of: npm, pnpm, yarn");
+		core.setFailed(
+			"manager is not a valid value, must be one of: npm, pnpm, yarn",
+		);
 		return;
 	}
 
@@ -111,7 +115,9 @@ async function run() {
 
 	if (manager == null) {
 		// detecting pm based on repository
-		core.info("package manager has not been provided, detecting based on repository");
+		core.info(
+			"package manager has not been provided, detecting based on repository",
+		);
 
 		const detectedPM = await detectPM({
 			cwd: process.cwd(),
@@ -176,7 +182,9 @@ async function run() {
 				allowUnusedFilesPattern: true,
 			});
 		} else {
-			core.setFailed("package manager is not supported, must be one of: npm, pnpm, yarn");
+			core.setFailed(
+				"package manager is not supported, must be one of: npm, pnpm, yarn",
+			);
 			return;
 		}
 
@@ -202,7 +210,10 @@ async function run() {
 			skipDuplicate: failSilently,
 		});
 
-		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)}`);
+		core.info(
+			`published ${extensionFile} to marketplace: ${JSON.stringify(result, null, 2)
+			}`,
+		);
 	} else {
 		const results = await publishOVSX({
 			pat: token,
@@ -221,7 +232,10 @@ async function run() {
 			}
 		}
 
-		core.info(`published ${extensionFile} to marketplace: ${JSON.stringify(results, null, 2)}`);
+		core.info(
+			`published ${extensionFile} to marketplace: ${JSON.stringify(results, null, 2)
+			}`,
+		);
 	}
 
 	core.setOutput("success", true);
