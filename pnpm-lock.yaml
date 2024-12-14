@@ -19,13 +19,13 @@ importers:
         version: 0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
       ovsx:
         specifier: ^0.10.0
-        version: 0.10.0
+        version: 0.10.1
       package-manager-detector:
         specifier: ^0.2.2
-        version: 0.2.4
+        version: 0.2.7
       zod:
         specifier: ^3.23.8
-        version: 3.23.8
+        version: 3.24.1
     devDependencies:
       '@actions-sdk/rolldown-builder':
         specifier: ^0.2.7
@@ -35,13 +35,13 @@ importers:
         version: 1.9.4
       '@types/node':
         specifier: ^20.17.5
-        version: 20.17.6
+        version: 20.17.10
       rolldown:
         specifier: ^0.13.2
         version: 0.13.2
       typescript:
         specifier: ^5.6.3
-        version: 5.6.3
+        version: 5.7.2
 
 packages:
 
@@ -334,8 +334,8 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/node@20.17.6':
-    resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
+  '@types/node@20.17.10':
+    resolution: {integrity: sha512-/jrvh5h6NXhEauFFexRin69nA0uHJ5gwk4iDivp/DeoEua3uwCUto6PC86IpRITBOs4+6i2I56K5x5b6WYGXHA==}
 
   '@vscode/vsce-sign-alpine-arm64@2.0.2':
     resolution: {integrity: sha512-E80YvqhtZCLUv3YAf9+tIbbqoinWLCO/B3j03yQPbjT3ZIHCliKZlsy1peNc4XNZ5uIb87Jn0HWx/ZbPXviuAQ==}
@@ -475,8 +475,8 @@ packages:
     resolution: {integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==}
     engines: {node: '>= 0.4'}
 
-  caniuse-lite@1.0.30001680:
-    resolution: {integrity: sha512-rPQy70G6AGUMnbwS1z6Xg+RkHYPAi18ihs47GH0jcxIG7wArmPgY3XbS2sRdBbxJljp3thdT8BIqv9ccCypiPA==}
+  caniuse-lite@1.0.30001688:
+    resolution: {integrity: sha512-Nmqpru91cuABu/DTCXbM2NSRHzM2uVHfPnhJ/1zEAJx/ILBRVmz3pzH4N7DZqbdG0gWClsCC05Oj0mJ/1AWMbA==}
 
   chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -975,16 +975,16 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
-  ovsx@0.10.0:
-    resolution: {integrity: sha512-DSgNXGQ444nGKag+LZh92R/hM2PfRSu+6VKfVawoZ+JzFDiGX8yhMkAuyVlHrlxLCpfQOsqs80GcHje/h2SpmA==}
+  ovsx@0.10.1:
+    resolution: {integrity: sha512-8i7+MJMMeq73m1zPEIClSFe17SNuuzU5br7G77ZIfOC24elB4pGQs0N1qRd+gnnbyhL5Qu96G21nFOVOBa2OBg==}
     engines: {node: '>= 20'}
     hasBin: true
 
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  package-manager-detector@0.2.4:
-    resolution: {integrity: sha512-H/OUu9/zUfP89z1APcBf2X8Us0tt8dUK4lUmKqz12QNXif3DxAs1/YqjGtcutZi1zQqeNQRWr9C+EbQnnvSSFA==}
+  package-manager-detector@0.2.7:
+    resolution: {integrity: sha512-g4+387DXDKlZzHkP+9FLt8yKj8+/3tOkPv7DVTJGGRm00RkEWgqbFstX1mXJ4M0VDYhUqsTOiISqNOJnhAu3PQ==}
 
   parse-semver@1.1.1:
     resolution: {integrity: sha512-Eg1OuNntBMH0ojvEKSrvDSnwLmvVuUOSdylH/pSCPNMIspLlweJyIWXCE+k/5hm3cj/EBUYwmWkjhBALNP4LXQ==}
@@ -1175,8 +1175,8 @@ packages:
   typed-rest-client@1.8.11:
     resolution: {integrity: sha512-5UvfMpd1oelmUPRbbaVnq+rHP7ng2cE4qoQkQeAqxRL6PklkxsM0g32/HL0yfvruK6ojQ5x8EE+HF4YV6DtuCA==}
 
-  typescript@5.6.3:
-    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1284,21 +1284,21 @@ packages:
   yauzl@2.10.0:
     resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
 
-  yauzl@3.1.3:
-    resolution: {integrity: sha512-JCCdmlJJWv7L0q/KylOekyRaUrdEoUxWkWVcgorosTROCFWiS9p2NNPE9Yb91ak7b1N5SxAZEliWpspbZccivw==}
+  yauzl@3.2.0:
+    resolution: {integrity: sha512-Ow9nuGZE+qp1u4JIPvg+uCiUr7xGQWdff7JQSk5VGYTAZMDe2q8lxJ10ygv10qmSj031Ty/6FNJpLO4o1Sgc+w==}
     engines: {node: '>=12'}
 
   yazl@2.5.1:
     resolution: {integrity: sha512-phENi2PLiHnHb6QBVot+dJnaAZ0xosj7p3fWl+znIjBDlnMI2PsZCJZ306BPTFOaHf5qdDEI8x5qFrSOBN5vrw==}
 
-  zod@3.23.8:
-    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+  zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
 
 snapshots:
 
   '@actions-sdk/action-schema@0.2.1':
     dependencies:
-      zod: 3.23.8
+      zod: 3.24.1
 
   '@actions-sdk/action-utils@0.4.0':
     dependencies:
@@ -1592,7 +1592,7 @@ snapshots:
       '@module-federation/runtime-tools': 0.5.1
       '@rspack/binding': 1.0.14
       '@rspack/lite-tapable': 1.0.1
-      caniuse-lite: 1.0.30001680
+      caniuse-lite: 1.0.30001688
     optional: true
 
   '@rspack/lite-tapable@1.0.1':
@@ -1605,7 +1605,7 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@types/node@20.17.6':
+  '@types/node@20.17.10':
     dependencies:
       undici-types: 6.19.8
 
@@ -1692,7 +1692,7 @@ snapshots:
       farver: 0.2.0
       js-yaml: 4.1.0
       unplugin-actions-kit: 0.2.3(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
-      zod: 3.23.8
+      zod: 3.24.1
     transitivePeerDependencies:
       - '@actions/core'
       - '@rspack/core'
@@ -1791,7 +1791,7 @@ snapshots:
       get-intrinsic: 1.2.4
       set-function-length: 1.2.2
 
-  caniuse-lite@1.0.30001680:
+  caniuse-lite@1.0.30001688:
     optional: true
 
   chalk@2.4.2:
@@ -2309,7 +2309,7 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  ovsx@0.10.0:
+  ovsx@0.10.1:
     dependencies:
       '@vscode/vsce': 3.2.1
       commander: 6.2.1
@@ -2318,14 +2318,14 @@ snapshots:
       leven: 3.1.0
       semver: 7.6.3
       tmp: 0.2.3
-      yauzl: 3.1.3
+      yauzl: 3.2.0
     transitivePeerDependencies:
       - debug
       - supports-color
 
   package-json-from-dist@1.0.1: {}
 
-  package-manager-detector@0.2.4: {}
+  package-manager-detector@0.2.7: {}
 
   parse-semver@1.1.1:
     dependencies:
@@ -2423,7 +2423,7 @@ snapshots:
 
   rolldown@0.13.2:
     dependencies:
-      zod: 3.23.8
+      zod: 3.24.1
     optionalDependencies:
       '@rolldown/binding-darwin-arm64': 0.13.2
       '@rolldown/binding-darwin-x64': 0.13.2
@@ -2563,7 +2563,7 @@ snapshots:
       tunnel: 0.0.6
       underscore: 1.13.7
 
-  typescript@5.6.3: {}
+  typescript@5.7.2: {}
 
   uc.micro@2.1.0: {}
 
@@ -2585,7 +2585,7 @@ snapshots:
       '@rollup/pluginutils': 5.1.2
       js-yaml: 4.1.0
       unplugin: 1.14.1
-      zod: 3.23.8
+      zod: 3.24.1
     optionalDependencies:
       '@rspack/core': 1.0.14
       rolldown: 0.13.2
@@ -2645,7 +2645,7 @@ snapshots:
       buffer-crc32: 0.2.13
       fd-slicer: 1.1.0
 
-  yauzl@3.1.3:
+  yauzl@3.2.0:
     dependencies:
       buffer-crc32: 0.2.13
       pend: 1.2.0
@@ -2654,4 +2654,4 @@ snapshots:
     dependencies:
       buffer-crc32: 0.2.13
 
-  zod@3.23.8: {}
+  zod@3.24.1: {}
