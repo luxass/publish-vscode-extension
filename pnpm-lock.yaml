@@ -9,38 +9,38 @@ importers:
   .:
     dependencies:
       '@actions/core':
-        specifier: ^1.11.1
+        specifier: 1.11.1
         version: 1.11.1
       '@vscode/vsce':
-        specifier: ^3.2.1
+        specifier: 3.2.1
         version: 3.2.1
       actions-kit:
-        specifier: ^0.2.8
+        specifier: 0.2.8
         version: 0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2)
       ovsx:
-        specifier: ^0.10.0
+        specifier: 0.10.0
         version: 0.10.0
       package-manager-detector:
-        specifier: ^0.2.2
+        specifier: 0.2.4
         version: 0.2.4
       zod:
-        specifier: ^3.23.8
+        specifier: 3.23.8
         version: 3.23.8
     devDependencies:
       '@actions-sdk/rolldown-builder':
-        specifier: ^0.2.7
+        specifier: 0.2.7
         version: 0.2.7(@actions/core@1.11.1)(@rspack/core@1.0.14)(actions-kit@0.2.8(@actions/core@1.11.1)(@rspack/core@1.0.14)(rolldown@0.13.2))(rolldown@0.13.2)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
       '@types/node':
-        specifier: ^22.0.0
+        specifier: 22.10.6
         version: 22.10.6
       rolldown:
-        specifier: ^0.13.2
+        specifier: 0.13.2
         version: 0.13.2
       typescript:
-        specifier: ^5.6.3
+        specifier: 5.6.3
         version: 5.6.3
 
 packages:
