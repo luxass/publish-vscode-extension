@@ -32,7 +32,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "@actions/core": "^2.0.0",
     "@vscode/vsce": "^3.2.1",
     "actions-kit": "^0.2.8",
     "ovsx": "^0.10.0",
