@@ -44,6 +44,6 @@
     "@biomejs/biome": "1.9.4",
     "@types/node": "^22.0.0",
     "rolldown": "^0.13.2",
-    "typescript": "^5.6.3"
+    "typescript": "^6.0.0"
   }
 }
