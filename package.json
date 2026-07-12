@@ -37,7 +37,7 @@
     "actions-kit": "^0.2.8",
     "ovsx": "^0.10.0",
     "package-manager-detector": "^0.2.2",
-    "zod": "^3.23.8"
+    "zod": "^4.0.0"
   },
   "devDependencies": {
     "@actions-sdk/rolldown-builder": "^0.2.7",
