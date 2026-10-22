@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "@vscode/vsce": "^3.2.1",
+    "@vscode/vsce": "^4.0.0",
     "actions-kit": "^0.2.8",
     "ovsx": "^0.10.0",
     "package-manager-detector": "^0.2.2",
